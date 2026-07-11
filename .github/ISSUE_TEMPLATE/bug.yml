@@ -1,0 +1,96 @@
+name: Hata bildirimi / Bug report
+description: Tekrar uretilebilir bir hata bildirin
+title: "[Bug]: "
+labels: ["needs-reproduction"]
+body:
+  - type: markdown
+    attributes:
+      value: "Secret, token, private domain veya veritabani dump'i eklemeyin."
+  - type: textarea
+    id: description
+    attributes:
+      label: Hata
+      description: Beklenen ve gerceklesen davranisi yazin.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Tekrar uretim adimlari
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Commit veya surum
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ortam
+      description: Docker/Coolify surumu ve isletim sistemi; secret eklemeyin.
+*** Add File: D:\openbase-stack\.github\ISSUE_TEMPLATE\feature.yml
+name: Ozellik onerisi / Feature request
+description: Topluluk veya upstream icin bir gelistirme onerisi
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Onerilen cozum
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Kapsam
+      options:
+        - Turkce dokumantasyon
+        - Self-host deployment
+        - Upstream Supabase adayi
+        - Topluluk araci
+    validations:
+      required: true
+*** Add File: D:\openbase-stack\.github\ISSUE_TEMPLATE\config.yml
+blank_issues_enabled: false
+contact_links:
+  - name: Guvenlik bildirimi
+    url: https://github.com/akin-umit/supabase-turkiye-community/security/advisories/new
+    about: Hassas guvenlik aciklarini public issue olarak acmayin.
+  - name: Supabase upstream
+    url: https://github.com/supabase/supabase/issues
+    about: Resmi upstream sorunlarini kontrol edin.
+*** Add File: D:\openbase-stack\.github\workflows\validate.yml
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  compose-and-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Docker Compose
+        run: docker compose --env-file .env.example config -q
+      - name: Check shell syntax
+        run: |
+          find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+      - name: Reject private deployment artifacts
+        run: |
+          if grep -RInE '(aqenta\.com\.tr|service_role.*eyJ|DASHBOARD_PASSWORD=[^$<{])' --exclude-dir=.git .; then
+            echo 'Private deployment artifact or credential-like value detected.'
+            exit 1
+          fi

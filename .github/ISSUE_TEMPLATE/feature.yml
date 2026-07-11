@@ -1,0 +1,27 @@
+name: Ozellik onerisi / Feature request
+description: Topluluk veya upstream icin bir gelistirme onerisi
+title: "[Feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Onerilen cozum
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Kapsam
+      options:
+        - Turkce dokumantasyon
+        - Self-host deployment
+        - Upstream Supabase adayi
+        - Topluluk araci
+    validations:
+      required: true

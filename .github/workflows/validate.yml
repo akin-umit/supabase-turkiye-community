@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  compose-and-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Docker Compose
+        run: docker compose --env-file .env.example config -q
+      - name: Check shell syntax
+        run: |
+          find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+      - name: Reject private deployment artifacts
+        run: |
+          if grep -RInE '(aqenta\.com\.tr|service_role.*eyJ|DASHBOARD_PASSWORD=[^$<{])' --exclude-dir=.git .; then
+            echo 'Private deployment artifact or credential-like value detected.'
+            exit 1
+          fi

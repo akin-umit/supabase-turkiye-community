@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Guvenlik bildirimi
+    url: https://github.com/akin-umit/supabase-turkiye-community/security/advisories/new
+    about: Hassas guvenlik aciklarini public issue olarak acmayin.
+  - name: Supabase upstream
+    url: https://github.com/supabase/supabase/issues
+    about: Resmi upstream sorunlarini kontrol edin.

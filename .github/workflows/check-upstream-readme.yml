@@ -68,5 +68,5 @@ jobs:
           if [ -n "$number" ]; then
             gh issue comment "$number" --body "$body"
           else
-            gh issue create --title "$title" --label documentation --body "$body"
+            gh issue create --title "$title" --label documentation --label upstream-doc-update --body "$body"
           fi

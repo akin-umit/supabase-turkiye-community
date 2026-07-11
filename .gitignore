@@ -1,0 +1,13 @@
+volumes/db/data
+volumes/storage
+.env
+.coolify-env.generated
+test.http
+docker-compose.override.yml
+.env.*
+!.env.example
+private/
+backups/
+*.dump
+*.sql.gz
+*.tar.gz

@@ -77,6 +77,21 @@ The image tags below are pinned in `docker-compose.yml` at the time of this docu
 
 ## Studio (Dashboard)
 
+### Community operational Management API
+
+The base Compose file also starts an internal read-only `management-api`
+service. It is not routed through Kong and has no host port.
+
+| Variable | Type | Scope | Purpose |
+|---|---|---|---|
+| `MANAGEMENT_API_TOKEN` | secret string | Self-hosted | Required bearer token for `/v1/*`; never expose it to browser code. |
+| `DEPLOYED_COMMIT` | Git SHA or `unknown` | Self-hosted | Optional sanitized source commit displayed by operational clients. |
+| `MANAGEMENT_ENABLE_ANALYTICS` | boolean | Self-hosted | Probe optional Analytics only when that service is running. Default: `false`. |
+| `MANAGEMENT_ENABLE_VECTOR` | boolean | Self-hosted | Probe optional Vector only when that service is running. Default: `false`. |
+
+The service reads sanitized status JSON from `volumes/management-status`.
+See [MANAGEMENT-API.en.md](./MANAGEMENT-API.en.md).
+
 > Studio is a Next.js (Pages Router) app. `NEXT_PUBLIC_*` variables are inlined into the client bundle at build time and are visible in the browser - never store secrets in them.
 
 ### Core (database, API gateway, public URL)

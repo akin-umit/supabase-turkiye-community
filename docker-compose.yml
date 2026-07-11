@@ -10,6 +10,35 @@
 
 services:
 
+  management-api:
+    build:
+      context: ./management-api
+    restart: unless-stopped
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "node -e \"fetch('http://127.0.0.1:8080/health').then((r) => {if (!r.ok) throw new Error(r.status)})\""
+        ]
+      timeout: 5s
+      interval: 10s
+      retries: 3
+      start_period: 10s
+    environment:
+      MANAGEMENT_API_TOKEN: ${MANAGEMENT_API_TOKEN}
+      DEPLOYED_COMMIT: ${DEPLOYED_COMMIT:-unknown}
+      BACKUP_STATUS_FILE: /run/management/backup-status.json
+      MIGRATION_STATUS_FILE: /run/management/migration-status.json
+      MANAGEMENT_ENABLE_ANALYTICS: ${MANAGEMENT_ENABLE_ANALYTICS:-false}
+      MANAGEMENT_ENABLE_VECTOR: ${MANAGEMENT_ENABLE_VECTOR:-false}
+    volumes:
+      - ./volumes/management-status:/run/management:ro,z
+
   studio:
     image: supabase/studio:2026.07.07-sha-a6a04f2
     restart: unless-stopped

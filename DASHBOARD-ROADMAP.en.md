@@ -22,6 +22,11 @@ Docker stack.
 
 ## Can be added with a management API
 
+The first read-only backend stage is present as the `management-api` service.
+It provides service health, a sanitized deployment commit, and operator-verified
+backup/migration status. Studio project-home cards are not connected to this
+API yet; that panel integration is a separate stage.
+
 - service health and restart counts
 - deployed commit and image versions
 - last migration and verified backup timestamp

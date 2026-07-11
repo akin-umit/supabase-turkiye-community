@@ -21,6 +21,11 @@ API'ler acik kaynak Docker stackinin parcasi degildir.
 
 ## Kendi yonetim API'mizle eklenebilir
 
+Ilk salt okunur backend asamasi repository'de `management-api` servisi olarak
+bulunur. Servis sagligi, sanitize deploy commit'i ve operator tarafindan
+dogrulanmis backup/migration durumlarini saglar. Studio ana sayfa kartlari henuz
+bu API'ye bagli degildir; panel entegrasyonu ayri bir asamadir.
+
 - servis sagligi ve restart sayisi
 - deploy commit/image surumleri
 - son migration ve dogrulanmis backup zamani

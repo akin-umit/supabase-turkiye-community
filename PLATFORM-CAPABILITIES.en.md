@@ -29,6 +29,7 @@ This document separates repository presence from runtime proof. A service appear
 | postgres-meta | Included - default | Database metadata service used by Studio. |
 | Supavisor | Included - default | Connection pooler; published host ports require firewall/bind protection. |
 | Kong | Included - default | Main public application gateway; direct host ports must still be restricted. |
+| Community operational Management API | Included - default | Internal read-only service health and sanitized status data. It is not Supabase Platform API; Studio cards are not connected yet. |
 
 GitHub Actions validates base Compose and shell syntax. That is not production runtime proof.
 
@@ -50,7 +51,8 @@ The presence of optional files does not guarantee that every overlay combination
 
 - Cloud organization and multi-project control plane
 - Managed backup/PITR, High Availability, and automatic scaling
-- Supabase Platform Management API and managed branching
+- Supabase Platform Management API and managed branching. The community
+  operational API is not a Cloud control-plane equivalent.
 - Managed global multi-region Edge Functions
 - Cloud-only ETL, advanced analytics, and integrations without an independently deployed open-source equivalent
 

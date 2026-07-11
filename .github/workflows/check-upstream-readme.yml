@@ -1,0 +1,72 @@
+name: Check upstream Supabase README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 7 * * 1"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare upstream README revision
+        id: upstream
+        shell: bash
+        run: |
+          set +e
+          output="$(sh scripts/check-upstream-readme.sh 2>&1)"
+          status=$?
+          set -e
+          printf '%s\n' "$output"
+
+          if [ "$status" -eq 0 ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$status" -ne 2 ]; then
+            exit "$status"
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "tracked=$(printf '%s\n' "$output" | sed -n 's/^tracked=//p')" >> "$GITHUB_OUTPUT"
+          echo "latest=$(printf '%s\n' "$output" | sed -n 's/^latest=//p')" >> "$GITHUB_OUTPUT"
+          echo "diff=$(printf '%s\n' "$output" | sed -n 's/^diff=//p')" >> "$GITHUB_OUTPUT"
+      - name: Open or update translation task
+        if: steps.upstream.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TRACKED: ${{ steps.upstream.outputs.tracked }}
+          LATEST: ${{ steps.upstream.outputs.latest }}
+          DIFF_URL: ${{ steps.upstream.outputs.diff }}
+        run: |
+          title="Supabase upstream README translation update"
+          body=$(cat <<EOF
+          Supabase'in resmî README dosyası değişti.
+
+          - Takip edilen commit: \`$TRACKED\`
+          - Güncel commit: \`$LATEST\`
+          - Değişiklikler: $DIFF_URL
+
+          Güncellenmesi ve insan tarafından kontrol edilmesi gereken dosyalar:
+
+          - [ ] \`docs/SUPABASE-RESMI-README-TR.md\`
+          - [ ] \`README.md\`
+          - [ ] \`README.en.md\`
+          - [ ] Etkilenen kurulum/operasyon belgeleri
+          - [ ] Kaynak commit bağlantısı
+
+          Otomatik çeviri doğrudan main dalına gönderilmemelidir.
+          EOF
+          )
+
+          number="$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number // empty')"
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --body "$body"
+          else
+            gh issue create --title "$title" --label documentation --body "$body"
+          fi

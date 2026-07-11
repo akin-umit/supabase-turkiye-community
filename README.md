@@ -102,6 +102,8 @@ Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS
 - [Supabase Cloud'dan taşıma](./MIGRATION.md)
 - [Yeni yönetici veya yapay zekâya devir](./AI-HANDOFF.md)
 - [Sürüm geçmişi](./versions.md)
+- [Platform yetenekleri ve gerçek durum](./PLATFORM-CAPABILITIES.md)
+- [Belge güncelleme sözleşmesi](./DOCUMENTATION-MAINTENANCE.md)
 - [Resmî Supabase README - Türkçe açıklamalı çeviri](./docs/SUPABASE-RESMI-README-TR.md)
 - [Resmî Supabase README - İngilizce orijinal](https://github.com/supabase/supabase/blob/master/README.md)
 - [Upstream belge güncelleme sistemi](./docs/UPSTREAM-DOC-SYNC.md)

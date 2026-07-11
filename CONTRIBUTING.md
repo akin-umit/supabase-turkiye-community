@@ -11,6 +11,7 @@ Human, AI-assisted, and AI-agent contributions are welcome. All contributors mus
 3. Run Compose validation and relevant smoke tests.
 4. Document migration and rollback impact.
 5. Do not add customer-specific domains, credentials, or branding.
+6. Update every affected English and Turkish document in the same pull request; follow [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md).
 
 ## Turkce
 
@@ -19,3 +20,4 @@ Human, AI-assisted, and AI-agent contributions are welcome. All contributors mus
 3. Compose dogrulamasini ve ilgili smoke testlerini calistirin.
 4. Migration ve rollback etkisini belgeleyin.
 5. Musteriye ozel domain, kimlik bilgisi veya marka eklemeyin.
+6. Etkilenen Turkce ve Ingilizce belgeleri ayni Pull Request icinde guncelleyin; [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md) kurallarini uygulayin.

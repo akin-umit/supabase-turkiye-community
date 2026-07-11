@@ -1,51 +1,89 @@
-# Platform Capabilities
+# Platform Yetenekleri ve Gerçek Durum
 
-## Cloud ile Self-host Farki
+[English version](./PLATFORM-CAPABILITIES.en.md)
 
-Resmi self-hosted Supabase tek projeyi taklit eder. Studio coklu organization/proje kontrol duzlemi degildir.
+Bu belge yalnız mevcut repository içeriğini ve doğrulanmış davranışı anlatır. Bir servisin Compose dosyasında bulunması, her production ortamında yapılandırıldığı veya canlı smoke testinin geçtiği anlamına gelmez.
 
-| Ozellik | Self-host durumu |
+## Durum Sözlüğü
+
+| Durum | Kesin anlamı |
 |---|---|
-| PostgreSQL, SQL Editor, RLS, extensions | Var |
-| Auth, OAuth, MFA, hooks | Var; provider ve SMTP/SMS ayari bize ait |
-| REST/GraphQL API | Var |
-| Realtime | Var |
-| Storage ve image transformation | Var |
-| Edge Runtime ve Functions listesi | Var |
-| Function custom secrets | Docker/platform environment variables ile |
-| Studio | Var |
-| Supavisor pooler | Var |
-| Bir panelden yeni Supabase projeleri olusturma | Yok; her proje ayri stack |
-| Managed PITR, otomatik backup, HA | Platform ozelligi degil; bizim sorumlulugumuz |
-| Global multi-region Edge Functions | Yok; kurdugumuz bolgelerde calisir |
-| Supabase Management API / branching | Yok |
-| Cloud'a ozel analytics, ETL ve bazi entegrasyonlar | Sinirli veya yok |
+| **Dahil - varsayılan** | Temel `docker-compose.yml` içinde bulunur ve gerekli env sağlandığında temel stack ile başlar. |
+| **Dahil - opsiyonel** | Repository içinde overlay/script vardır; ayrıca etkinleştirilmesi ve test edilmesi gerekir. |
+| **Harici yapılandırma gerekli** | Kod/servis desteği vardır fakat SMTP, SMS, OAuth, S3 veya DNS gibi harici sağlayıcı gerekir. |
+| **Sunulmuyor** | Bu self-host dağıtımının parçası değildir; çoğunlukla Supabase Cloud kontrol düzlemi özelliğidir. |
+| **Planlanıyor** | Onaylanmış Issue/roadmap bağlantısı bulunmalıdır. Bağlantı yoksa bu durum kullanılmaz. |
+| **Doğrulanmadı** | Dosya veya ayar mevcut olabilir ancak güncel temiz kurulum/runtime kanıtı yoktur. |
 
-## Supabase'den Neleri Alabiliriz?
+## Temel Stack
 
-Acik kaynak ve lisansi uygun parcalar kendi stackimize dahil edilebilir:
+| Yetenek | Durum | Kanıt ve sınır |
+|---|---|---|
+| PostgreSQL | Dahil - varsayılan | `docker-compose.yml` içindeki `db` servisi. Backup, bakım ve HA kullanıcı sorumluluğudur. |
+| Studio | Dahil - varsayılan | `studio` servisi. Cloud organizasyon/proje kontrol düzlemi değildir. |
+| Auth | Dahil - varsayılan | `auth` servisi. Email/şifre kullanılabilir; SMTP, SMS ve OAuth ayrıca yapılandırılır. |
+| REST API | Dahil - varsayılan | PostgREST `rest` servisi. Erişim güvenliği RLS ve yetkilere bağlıdır. |
+| GraphQL | Dahil - varsayılan | PostgreSQL `pg_graphql` extension ve API yapılandırmasına bağlıdır. Her şemada otomatik yetki vermez. |
+| Realtime | Dahil - varsayılan | `realtime` servisi ve gerekli database publication/izinleri gerekir. |
+| Storage | Dahil - varsayılan | `storage` ve `imgproxy` servisleri. Varsayılan backend yerel persistent dizindir. |
+| Edge Functions | Dahil - varsayılan | `functions` servisi örnek function dizinini çalıştırır. Cloud global dağıtım sağlamaz. |
+| postgres-meta | Dahil - varsayılan | Studio'nun database metadata işlemleri için `meta` servisi. |
+| Supavisor | Dahil - varsayılan | Connection pooler servisi. Host portları firewall/bind kurallarıyla korunmalıdır. |
+| Kong API Gateway | Dahil - varsayılan | Public uygulama trafiğinin ana girişidir. Doğrudan yayınlanan host portları ayrıca sınırlandırılır. |
 
-- Supabase Studio
-- Auth (GoTrue)
-- Realtime
-- Storage API
-- Edge Runtime
-- postgres-meta
-- Supavisor
-- Supabase PostgreSQL image'i ve extensionlari
-- Supabase JS/Flutter/diger resmi client kutuphaneleri
-- Resmi Docker compose, migration ve utility scriptleri
+Temel Compose ve shell kontrolleri GitHub Actions içinde çalışır. Bu doğrulama containerların production verisiyle canlı smoke test edildiği anlamına gelmez.
 
-Her alimda lisans, image surumu, env sozlesmesi, migration ve geri donus kontrol edilir. Upstream dosya dogrudan kopyalanip unutulmaz; kaynak commit ve yerel fark kaydedilir.
+## Opsiyonel Bileşenler
 
-## Plugin Kelimesinin Uc Anlami
+| Yetenek | Durum | Etkinleştirme ve kanıt |
+|---|---|---|
+| Logflare/Vector Analytics | Dahil - opsiyonel | `docker-compose.logs.yml`; ek RAM/CPU ve ayrıca runtime doğrulaması gerekir. |
+| S3 uyumlu Storage | Dahil - opsiyonel | `docker-compose.s3.yml` ve test dosyaları; sağlayıcı credential ve bucket gerekir. |
+| RustFS | Dahil - opsiyonel | `docker-compose.rustfs.yml`; temel stackin otomatik parçası değildir. |
+| Caddy/Nginx HTTPS proxy | Dahil - opsiyonel | İlgili Compose overlay ve proxy config dosyaları bulunur. DNS/TLS ayrıca hazırlanır. |
+| Envoy gateway | Dahil - opsiyonel | `docker-compose.envoy.yml`; varsayılan Kong yolunun otomatik yerine geçmez. |
+| PostgreSQL 17 yükseltme araçları | Dahil - opsiyonel | `docker-compose.pg17.yml` ve upgrade scripti. Backup/restore testi olmadan uygulanmaz. |
+| Harici SMTP | Harici yapılandırma gerekli | Auth email gönderimi için gerçek SMTP bilgileri gerekir. Örnek Mailpit production servisi değildir. |
+| OAuth sağlayıcıları | Harici yapılandırma gerekli | Sağlayıcı uygulaması, callback URL ve secret gerekir. Studio ekranının görünmesi yeterli kanıt değildir. |
+| SMS/telefon Auth | Harici yapılandırma gerekli | Desteklenen SMS sağlayıcısı ve credential gerekir. |
 
-1. PostgreSQL extensions: Studio Database > Extensions veya SQL ile etkinlestirilebilir. Image icinde bulunmayan extension icin ozel Postgres image gerekir.
-2. Studio integrations: Bazilari self-hostta calisir, bazilari Supabase Cloud servislerine baglidir. Ekranda gorunmesi calisacagi anlamina gelmez.
-3. Uygulama/client kutuphaneleri: `supabase-js`, auth/storage/realtime clientlari self-host URL ve anahtarlarla calisir.
+Opsiyonel bir dosyanın repository içinde bulunması, bütün kombinasyonların aynı anda desteklendiği anlamına gelmez. Her kombinasyon ayrı Compose config ve smoke testi gerektirir.
 
-Bir Cloud ozelligini kopyalamadan once kaynak kodun acik olup olmadigi ve harici platform API'sine bagimliligi kontrol edilir. Kapali Cloud kontrol duzlemi kodu bu repoya dahil edilemez.
+## Supabase Cloud ile Farklar
 
-## Coklu Proje Modeli
+| Cloud yeteneği | Self-host durumu |
+|---|---|
+| Tek panelden organization ve yeni proje oluşturma | Sunulmuyor; bir stack bir izole projedir. |
+| Managed backup ve Point-in-Time Recovery | Sunulmuyor; backup/restore operasyonu kullanıcıya aittir. |
+| Managed High Availability ve otomatik ölçekleme | Sunulmuyor. |
+| Supabase Platform Management API | Sunulmuyor. |
+| Branching/preview database kontrol düzlemi | Sunulmuyor. |
+| Global multi-region Edge Functions | Sunulmuyor; yalnız deploy edilen altyapıda çalışır. |
+| Cloud'a özel ETL, gelişmiş analytics ve entegrasyonlar | Temel self-host stackte sunulmuyor veya açık kaynak karşılığı ayrıca kurulmalıdır. |
 
-Her musteri/proje icin ayri stack kullanilir. Her stackin ayri domaini, database volume'u, JWT/keys, backup plani ve kaynak limitleri olur. Tek Studio icinde Cloud benzeri proje olusturma bu dagitimin hedefi degildir.
+Bu özellikler “yakında gelecek” olarak kabul edilmez. Yalnız onaylanmış ve bağlantılı bir Issue/roadmap varsa **Planlanıyor** olarak eklenebilir.
+
+## Extension, Integration ve Client Ayrımı
+
+1. **PostgreSQL extension:** Image içinde mevcutsa SQL veya Studio üzerinden etkinleştirilebilir. Image içinde olmayan extension için özel image ve migration testi gerekir.
+2. **Studio integration:** Ekranda görünmesi self-host desteğini garanti etmez. Cloud API bağımlılığı ve lisans ayrıca kontrol edilir.
+3. **Client library:** `supabase-js` ve diğer istemciler self-host URL/anahtarlarıyla çalışabilir; server tarafındaki özelliğin yapılandırılmış olması gerekir.
+
+## Çoklu Proje Modeli
+
+Bu dağıtım Cloud benzeri çoklu proje kontrol düzlemi hedeflemez. Her bağımsız proje için ayrı stack, domain, database/Storage volume, secret seti, backup planı ve kaynak limiti kullanılır.
+
+## Bir Yetenek Ne Zaman “Doğrulandı” Sayılır?
+
+Bir capability ancak aşağıdaki kanıtlar raporlandığında runtime doğrulanmış sayılır:
+
+1. Kullanılan repository commit SHA ve Compose/overlay listesi
+2. `docker compose config` sonucu
+3. Container health ve sabit restart sayıları
+4. İlgili endpoint için read-only smoke testi
+5. Persistent veri kullanılan özelliklerde veri görünürlüğü
+6. Rollback yolu
+
+Bu kanıtlar yoksa belge yalnız **dahil**, **opsiyonel** veya **doğrulanmadı** diyebilir; production garantisi veremez.
+
+Belge güncelleme kuralları: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md).

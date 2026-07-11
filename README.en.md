@@ -103,6 +103,7 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 - [Turkish illustrated setup](./docs/TURKCE-KURULUM.md)
 - [Deployment](./DEPLOYMENT.md)
 - [Coolify](./COOLIFY.md)
+- [Edge Functions secret management](./FUNCTION-SECRETS.en.md)
 - [Configuration reference](./CONFIG.md)
 - [Operations, backup, restore, and rollback](./OPERATIONS.md)
 - [Migration](./MIGRATION.md)

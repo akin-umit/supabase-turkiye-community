@@ -13,7 +13,7 @@ set -e
 
 pass=0
 fail=0
-project_name="${COMPOSE_PROJECT_NAME:-supabase}"
+project_name="${COMPOSE_PROJECT_NAME:-$(basename "$PWD")}"
 
 fail_msg() {
     fail=$((fail + 1))

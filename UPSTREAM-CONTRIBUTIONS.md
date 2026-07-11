@@ -39,7 +39,34 @@ Supabase maintainerları nihai kabul yetkisine sahiptir. Topluluk reposunda bir 
 
 ## Supabase'e İlk Tanıtım Mesajı / Initial Introduction Draft
 
-Bu metin, proje yayınlandıktan ve kurulum en az bir temiz sunucuda yeniden doğrulandıktan sonra GitHub Discussion'a yorum olarak gönderilebilir:
+**Durum:** Taslak; henüz Supabase'e gönderilmedi.<br>
+**Gönderim koşulu:** Public CI yeşil, en az bir temiz kurulum ve bir güncel private deployment smoke testi kanıtlanmış, capability belgeleri güncel ve kullanıcıdan kamuya açık gönderim için son onay alınmış olmalıdır.
+
+### Türkçe Taslak
+
+Türkçe metin topluluk içinde inceleme ve arşiv amacıyla tutulur. Supabase'in GitHub Discussion alanına gönderilecek asıl mesaj İngilizce taslaktır.
+
+```markdown
+Merhaba Supabase ekibi ve topluluğu,
+
+Türkçe dokümantasyon ve tekrar üretilebilir self-host süreçlerine odaklanan bağımsız **Supabase Türkiye Community** projesini başlattık:
+
+https://github.com/akin-umit/supabase-turkiye-community
+
+Amacımız, Türkçe konuşan geliştiricilerin resmî açık kaynak Supabase stackini kendi altyapılarında anlamalarına ve güvenli biçimde işletmelerine yardımcı olmaktır. İlk kapsamımız Docker Compose ve Coolify kurulumları; başlangıç rehberleri, görsel kurulum örnekleri, secret üretimi, deployment kontrolleri, backup/restore, migration ve yaygın hata teşhisidir.
+
+Projenin bağımsız olduğunu, Supabase Cloud veya resmî bir bölgesel temsilcilik olmadığını açıkça belirtiyoruz. Upstream atfını koruyor ve upstream katkılar için ayrı, temiz bir fork kullanıyoruz.
+
+Genel bir iyileştirme bulduğumuzda bunu güncel upstream sürümünde tekrar üretmeyi, deployment'a özel ayrıntıları kaldırmayı, test veya minimal tekrar üretim eklemeyi ve ilgili Supabase reposuna dar kapsamlı PR göndermeyi hedefliyoruz.
+
+Bu Türkçe topluluk kaynağını upstream self-host değişiklikleriyle uyumlu tutmak için önerilerinizi ve ileride uygun bir topluluk kaynakları alanında listelenme koşullarını öğrenmek isteriz.
+
+Açık kaynak self-host stackini topluluğa sunduğunuz için teşekkür ederiz.
+```
+
+### English Draft
+
+This is the message intended for the Supabase GitHub Discussion after the readiness conditions above are met:
 
 ```markdown
 Hi Supabase team and community,

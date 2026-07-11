@@ -40,7 +40,7 @@ This project turns those operational lessons into a reusable, Git-managed distri
 | I manage a Linux VPS and Docker | [Docker/VPS deployment](./DEPLOYMENT.md#duz-docker--vps) |
 | I am migrating from Supabase Cloud | [Migration guide](./MIGRATION.md) |
 | My stack is already running | [Operations guide](./OPERATIONS.md) |
-| I need capability and Cloud parity details | [Platform capabilities](./PLATFORM-CAPABILITIES.md) |
+| I need capability and Cloud parity details | [Platform capabilities](./PLATFORM-CAPABILITIES.en.md) |
 | I want to contribute | [Contribution guide](./CONTRIBUTING.md) |
 
 ## Important: One Stack Is One Project
@@ -74,7 +74,7 @@ This repository does not claim to reproduce every Supabase Cloud or Pro feature.
 - Backups, restore testing, and disaster recovery
 - Upgrades and compatibility validation
 
-Self-hosting provides infrastructure control and data ownership, but it transfers operational responsibility to you. See [PLATFORM-CAPABILITIES.md](./PLATFORM-CAPABILITIES.md) before choosing it for production.
+Self-hosting provides infrastructure control and data ownership, but it transfers operational responsibility to you. See [Platform capabilities and evidence](./PLATFORM-CAPABILITIES.en.md) before choosing it for production.
 
 ## Security Rules
 
@@ -106,9 +106,10 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 - [Configuration reference](./CONFIG.md)
 - [Operations, backup, restore, and rollback](./OPERATIONS.md)
 - [Migration](./MIGRATION.md)
-- [Platform capabilities](./PLATFORM-CAPABILITIES.md)
+- [Platform capabilities and evidence](./PLATFORM-CAPABILITIES.en.md)
 - [AI/operator handoff](./AI-HANDOFF.md)
 - [Version history](./versions.md)
+- [Documentation maintenance contract](./DOCUMENTATION-MAINTENANCE.md)
 - [Official Supabase README - Turkish explained translation](./docs/SUPABASE-RESMI-README-TR.md)
 - [Official Supabase README - English original](https://github.com/supabase/supabase/blob/master/README.md)
 - [Upstream documentation sync policy](./docs/UPSTREAM-DOC-SYNC.md)

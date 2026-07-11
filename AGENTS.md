@@ -46,6 +46,8 @@ Stop immediately if a diff contains an unknown token-like value, real hostname, 
 - One self-hosted Compose stack represents one isolated Supabase project unless a separately reviewed architecture says otherwise.
 - Keep private deployment changes out of public commits. Reproduce reusable fixes with placeholders in a clean public branch.
 - Do not automatically sync private repository history into this repository.
+- A code, Compose, script, image, environment, or test change is incomplete until all affected Turkish and English documents are updated according to `DOCUMENTATION-MAINTENANCE.md`.
+- Distinguish repository presence, CI validation, and production runtime evidence. Never promote one evidence level into another.
 
 ## Required Validation
 

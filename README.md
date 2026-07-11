@@ -1,139 +1,114 @@
 <div align="center">
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/supabase/supabase/3-self-hosted-deployment)
+# Supabase Türkiye Community
+
+**Supabase'i kendi sunucunda kurmak ve Türkçe kaynaklarla yönetmek için topluluk projesi.**
+
+[![CI](https://github.com/akin-umit/supabase-turkiye-community/actions/workflows/validate.yml/badge.svg)](https://github.com/akin-umit/supabase-turkiye-community/actions/workflows/validate.yml)
+[![License](https://img.shields.io/badge/Lisans-Apache%202.0-blue.svg)](./LICENSE)
+
+[Türkçe kuruluma başla](./docs/TURKCE-KURULUM.md) · [Sorun bildir](https://github.com/akin-umit/supabase-turkiye-community/issues/new/choose) · [Soru sor](https://github.com/akin-umit/supabase-turkiye-community/discussions)
 
 </div>
 
-# Supabase Turkiye Community
+> [!IMPORTANT]
+> Bu proje bağımsız bir Türkiye topluluğu çalışmasıdır. Supabase tarafından yönetilen Supabase Cloud değildir ve henüz Supabase'in resmî Türkiye temsilcisi değildir. Kaynak proje: [supabase/supabase](https://github.com/supabase/supabase).
 
-[Turkce](#turkce) | [English](#english)
+![Kurulum yol haritası](./docs/images/kurulum-yol-haritasi.svg)
 
-> Supabase ekosistemine Turkce dokumantasyon, self-host iyilestirmeleri ve acik kaynak katkilar sunan bagimsiz topluluk girisimi. Supabase tarafindan resmi olarak taninana kadar resmi temsilci degildir.
+## Burada Ne Yapabilirsin?
 
-## Turkce
+- Supabase'i Coolify veya düz Docker ile kendi sunucuna kurabilirsin.
+- Türkçe adımlarla kullanıcı adı, parola, domain ve API anahtarlarını hazırlayabilirsin.
+- Kurulum hatalarını Türkçe hata rehberiyle çözebilirsin.
+- Geliştirmeleri Pull Request ile topluluğa, uygun olanları resmî Supabase projesine gönderebilirsin.
 
-Supabase Turkiye Community; Supabase'in acik kaynak self-host yapisini gelistirmek, Turkce teknik kaynak uretmek, sorunlari tekrar uretilebilir hale getirmek ve uygun duzeltmeleri upstream Supabase projelerine tasimak icin kurulmustur.
+## İlk Defa Kuruyorsan
+
+Teknik terimleri bilmiyorsan doğrudan şu rehberi aç:
+
+### [Türkçe Resimli Kurulum Rehberini Aç](./docs/TURKCE-KURULUM.md)
+
+Rehber sana sırayla şunları yaptırır:
+
+1. Sunucunun yeterli olup olmadığını kontrol etme.
+2. GitHub reposunu kendi hesabına alma.
+3. Coolify'de doğru kaynak türünü seçme.
+4. Domain ve ortam değişkenlerini doldurma.
+5. Güvenli şifre ve API anahtarlarını üretme.
+6. Kurulumu başlatma ve çalışan servisleri kontrol etme.
+7. Studio'ya giriş yapma ve uygulama anahtarlarını bulma.
+
+## Hangi Kurulum Sana Uygun?
+
+| Durumun | Seçmen gereken yol |
+|---|---|
+| Coolify panelim var, komut satırı bilmiyorum | [Coolify ile resimli kurulum](./docs/TURKCE-KURULUM.md#yol-a-coolify-ile-kurulum) |
+| Linux sunucum var, terminal kullanabiliyorum | [Docker/VPS kurulumu](./DEPLOYMENT.md#duz-docker--vps) |
+| Supabase Cloud projemi taşıyacağım | [Taşıma rehberi](./MIGRATION.md) |
+| Kurulum çalışıyor, bakım/yedek alacağım | [Operasyon rehberi](./OPERATIONS.md) |
+| Bir hata aldım | [Türkçe hata kontrol listesi](./docs/TURKCE-KURULUM.md#sik-hatalar) |
+| Katkı yapmak istiyorum | [Katkı rehberi](./CONTRIBUTING.md) |
+
+## Önemli Gerçek: Tek Kurulum Tek Projedir
+
+Self-hosted Supabase Studio, Supabase Cloud'daki gibi aynı panelden sınırsız yeni proje oluşturmaz. Bu Docker yapısında **bir stack bir Supabase projesidir**. İkinci bağımsız proje için ikinci stack, ayrı veritabanı, ayrı domain ve ayrı secret seti gerekir.
+
+Supabase Cloud ile self-hosted sürüm arasındaki farkları [Platform Yetenekleri](./PLATFORM-CAPABILITIES.md) belgesinde Türkçe görebilirsin.
+
+## Kurulumdan Sonra Hangi Adresler Çalışır?
+
+Domainin `https://supabase.ornek.com` ise:
+
+| İşlem | Adres |
+|---|---|
+| Studio yönetim paneli | `https://supabase.ornek.com/project/default` |
+| Auth API | `https://supabase.ornek.com/auth/v1` |
+| REST API | `https://supabase.ornek.com/rest/v1` |
+| Storage API | `https://supabase.ornek.com/storage/v1` |
+| Edge Functions | `https://supabase.ornek.com/functions/v1` |
+
+Sadece `kong` servisi internete açılır. PostgreSQL, Auth, Storage, Realtime ve diğer servisler Docker ağı içinde kalır.
+
+## Güvenlik Uyarısı
+
+> [!CAUTION]
+> `.env.example` içindeki örnek şifrelerle production kurulumu başlatma. `.env` dosyasını GitHub'a gönderme. `SUPABASE_SECRET_KEY`, `POSTGRES_PASSWORD` ve dashboard parolasını tarayıcı/frontend koduna koyma.
+
+Kurulumdan önce anahtar üretme scriptlerini çalıştır ve sunucu dışına otomatik yedek hedefi hazırla. Ayrıntılar: [Türkçe Kurulum](./docs/TURKCE-KURULUM.md) ve [Operasyon](./OPERATIONS.md).
+
+## Projenin İçindeki Servisler
+
+Bu dağıtım; Supabase Studio, PostgreSQL, Auth, PostgREST, Realtime, Storage, Edge Runtime, Kong, imgproxy, postgres-meta ve Supavisor bileşenlerini içerir. Bileşenlerin ne yaptığını [Platform Yetenekleri](./PLATFORM-CAPABILITIES.md) belgesinden okuyabilirsin.
+
+## Geliştiriciler Nasıl Katkı Verir?
+
+1. Önce Issue veya Discussion açılır.
+2. Değişiklik ayrı bir dalda hazırlanır.
+3. Pull Request açılır; yapılan işlem ve test sonucu yazılır.
+4. CI, Compose yapısını, shell dosyalarını ve özel bilgi sızıntısını denetler.
+5. Katkı `community-only`, `deployment-only` veya `upstream-candidate` olarak sınıflandırılır.
+6. Supabase'e uygun değişiklik, temiz bir dal ile [Supabase forkumuza](https://github.com/akin-umit/supabase) ve oradan resmî projeye taşınır.
+
+Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md)
+
+## Ayrıntılı Belgeler
+
+- [Türkçe resimli başlangıç](./docs/TURKCE-KURULUM.md)
+- [Kurulum seçenekleri](./DEPLOYMENT.md)
+- [Coolify ayarları](./COOLIFY.md)
+- [Ortam değişkenleri](./CONFIG.md)
+- [Yedek, güncelleme ve geri dönüş](./OPERATIONS.md)
+- [Supabase Cloud'dan taşıma](./MIGRATION.md)
+- [Yeni yönetici veya yapay zekâya devir](./AI-HANDOFF.md)
+- [Sürüm geçmişi](./versions.md)
 
 ## English
 
-Supabase Turkiye Community is an independent community initiative focused on Turkish documentation, reproducible self-hosting improvements, and responsible upstream contributions to the Supabase ecosystem. It is not the managed Supabase Cloud service or an official Supabase representative.
+Supabase Türkiye Community is an independent community initiative providing Turkish-first documentation, reproducible self-hosting improvements, and responsible upstream contributions. English contributor and technical documents remain available throughout the repository. Start with [DEPLOYMENT.md](./DEPLOYMENT.md) or [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## Contribution Flow / Katki Akisi
+## Lisans ve Marka
 
-1. Fikir veya hata once Issue/Discussion olarak kaydedilir.
-2. Gelistirici topluluk reposuna PR acar.
-3. CI, secret taramasi, lisans ve reviewer kontrolleri tamamlanir.
-4. Degisiklik `community-only`, `deployment-only` veya `upstream-candidate` olarak siniflandirilir.
-5. Upstream adayi degisiklik ayri ve temiz bir branch ile ilgili Supabase reposuna PR olarak gonderilir.
+Bu repo Apache License 2.0 altında yayımlanır. Çalışan bileşenlerin kendi lisansları olabilir. “Supabase” adı kaynak projeyi ve uyumluluk hedefini belirtmek için kullanılır; resmî temsil veya onay iddiası değildir.
 
-Detaylar: [GOVERNANCE.md](./GOVERNANCE.md) ve [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md).
-
-> This repository is a reusable, Git-managed self-hosted Supabase distribution. It is not tied to any application or customer. One deployment represents one Supabase project.
-
-## Repository Guide
-
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - fresh install on Coolify, plain Docker, and other Compose platforms
-- [OPERATIONS.md](./OPERATIONS.md) - health checks, backups, restore, upgrades, rollback, and incident handling
-- [PLATFORM-CAPABILITIES.md](./PLATFORM-CAPABILITIES.md) - Cloud parity, limits, extensions, integrations, and reusable Supabase components
-- [MIGRATION.md](./MIGRATION.md) - safe migration from Supabase Cloud or another PostgreSQL deployment
-- [AI-HANDOFF.md](./AI-HANDOFF.md) - exact context and verification contract for a new operator or AI agent
-- [COOLIFY.md](./COOLIFY.md) - Coolify-specific settings and known failure modes
-- [CONFIG.md](./CONFIG.md) - environment variable reference
-
-## Supported Operating Model
-
-- One stack equals one isolated Supabase project.
-- Expose only Kong through the public domain. Other services stay on the private Docker network.
-- Secrets live in the platform secret store or an untracked `.env`, never in Git.
-- Production changes follow `expand -> migrate -> switch -> cleanup`.
-- The source platform remains the rollback source until migration verification is complete.
-
-This distribution adapts the upstream Supabase Docker Compose setup and adds reproducible deployment, operations, recovery, and platform guidance. It runs Supabase-compatible open-source services locally or on your own infrastructure.
-
-## Getting Started
-
-Follow the detailed setup guide in our documentation: [Self-Hosting with Docker](https://supabase.com/docs/guides/self-hosting/docker)
-
-The guide covers:
-- Prerequisites (Git and Docker)
-- Initial setup and configuration
-- Securing your installation
-- Accessing services
-- Updating your instance
-
-## What's Included
-
-This Docker Compose configuration includes the following services:
-
-- **[Studio](https://github.com/supabase/supabase/tree/master/apps/studio)** - A dashboard for managing your self-hosted Supabase project
-- **[Kong](https://github.com/Kong/kong)** - Kong API gateway
-- **[Auth](https://github.com/supabase/auth)** - JWT-based authentication API for user sign-ups, logins, and session management
-- **[PostgREST](https://github.com/PostgREST/postgrest)** - Web server that turns your PostgreSQL database directly into a RESTful API
-- **[Realtime](https://github.com/supabase/realtime)** - Elixir server that listens to PostgreSQL database changes and broadcasts them over websockets
-- **[Storage](https://github.com/supabase/storage)** - RESTful API for managing files in S3, with Postgres handling permissions
-- **[imgproxy](https://github.com/imgproxy/imgproxy)** - Fast and secure image processing server
-- **[postgres-meta](https://github.com/supabase/postgres-meta)** - RESTful API for managing Postgres (fetch tables, add roles, run queries)
-- **[PostgreSQL](https://github.com/supabase/postgres)** - Object-relational database with over 30 years of active development
-- **[Edge Runtime](https://github.com/supabase/edge-runtime)** - Web server based on Deno runtime for running JavaScript, TypeScript, and WASM services
-- **[Logflare](https://github.com/Logflare/logflare)** - Log management and event analytics platform
-- **[Vector](https://github.com/vectordotdev/vector)** - High-performance observability data pipeline for logs
-- **[Supavisor](https://github.com/supabase/supavisor)** - Supabase's Postgres connection pooler
-
-## Documentation
-
-- **[Self-Hosting with Docker](https://supabase.com/docs/guides/self-hosting/docker)** - Setup and configuration guides
-- **[CHANGELOG.md](./CHANGELOG.md)** - Track recent updates and changes to services
-- **[versions.md](./versions.md)** - Complete history of Docker image versions for rollback reference
-- **[Ask DeepWiki / Supabase](https://deepwiki.com/supabase/supabase/3-self-hosted-deployment)** - DeepWiki-generated description of self-hosted configuration
-- **[CONFIG.md](./CONFIG.md)** - Configuration reference for all environment variables
-
-## Updates
-
-To update your self-hosted Supabase instance:
-
-1. Review [CHANGELOG.md](./CHANGELOG.md) for breaking changes
-2. Check [versions.md](./versions.md) for new image versions
-3. Update `docker-compose.yml` if there are configuration changes
-4. Pull the latest images: `docker compose pull`
-5. Stop services: `docker compose down`
-6. Start services with new configuration: `docker compose up -d`
-
-**Note:** Consider to always backup your database before updating.
-
-## Community & Support
-
-For troubleshooting common issues, see:
-- [GitHub Discussions](https://github.com/orgs/supabase/discussions?discussions_q=is%3Aopen+label%3Aself-hosted) - Questions, feature requests, and workarounds
-- [GitHub Issues](https://github.com/supabase/supabase/issues?q=is%3Aissue%20state%3Aopen%20label%3Aself-hosted) - Known issues
-- [Documentation](https://supabase.com/docs/guides/self-hosting) - Setup and configuration guides
-
-Self-hosted Supabase is community-supported. Get help and connect with other users:
-
-- [Discord](https://discord.supabase.com) - Real-time chat and community support
-- [Reddit](https://www.reddit.com/r/Supabase/) - Official Supabase subreddit
-
-Share your self-hosting experience:
-
-- [GitHub Discussions](https://github.com/orgs/supabase/discussions/39820) - "Self-hosting: What's working (and what's not)?"
-
-## Important Notes
-
-### Security
-
-⚠️ **The default configuration is not secure for production use.**
-
-Before deploying to production, you must:
-- [Update](https://supabase.com/docs/guides/self-hosting/docker#configuring-and-securing-supabase) all default passwords and secrets in the `.env` file
-- Review and update CORS settings
-- Consider setting up a secure proxy in front of self-hosted Supabase
-- Review and adjust network security configuration (ACLs, etc.)
-- Set up proper backup procedures
-
-See the [main installation guide](https://supabase.com/docs/guides/self-hosting/docker) and the how-tos in the documentation.
-
-## License
-
-This repository is licensed under the Apache 2.0 License. See the main [Supabase repository](https://github.com/supabase/supabase) for details.
-
-See [LICENSE](./LICENSE), [NOTICE.md](./NOTICE.md), [BRANDING.md](./BRANDING.md), and [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md). Runtime images and bundled components may use their own licenses.
+[LICENSE](./LICENSE) · [NOTICE.md](./NOTICE.md) · [BRANDING.md](./BRANDING.md) · [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md)

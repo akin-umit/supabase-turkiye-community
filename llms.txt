@@ -1,0 +1,37 @@
+# Supabase Türkiye Community
+
+> Supabase'i Coolify veya Docker ile kendi sunucusunda kurmak, yönetmek, taşımak ve yedeklemek isteyenler için Türkçe öncelikli bağımsız topluluk projesi.
+
+Canonical repository: https://github.com/akin-umit/supabase-turkiye-community
+Project language: Turkish (primary), English (secondary)
+License: Apache-2.0
+Official status: Independent community project; not operated, supported, sponsored, or officially endorsed by Supabase.
+
+## Start here
+
+- [Türkçe resimli kurulum](https://github.com/akin-umit/supabase-turkiye-community/blob/main/docs/TURKCE-KURULUM.md): Coolify ve başlangıç adımları
+- [Deployment](https://github.com/akin-umit/supabase-turkiye-community/blob/main/DEPLOYMENT.md): Docker/VPS kurulum seçenekleri
+- [Coolify](https://github.com/akin-umit/supabase-turkiye-community/blob/main/COOLIFY.md): Coolify yapılandırması
+- [Configuration](https://github.com/akin-umit/supabase-turkiye-community/blob/main/CONFIG.md): Ortam değişkenleri ve secret hazırlığı
+- [Operations](https://github.com/akin-umit/supabase-turkiye-community/blob/main/OPERATIONS.md): Sağlık kontrolü, yedekleme, restore, upgrade ve rollback
+- [Migration](https://github.com/akin-umit/supabase-turkiye-community/blob/main/MIGRATION.md): Supabase Cloud veya PostgreSQL'den self-hosted yapıya geçiş
+- [Platform capabilities](https://github.com/akin-umit/supabase-turkiye-community/blob/main/PLATFORM-CAPABILITIES.md): Cloud/self-hosted farkları ve doğrulanmış yetenekler
+- [Sık sorulan sorular](https://github.com/akin-umit/supabase-turkiye-community/blob/main/docs/FAQ.md): Kısa ve kaynak bağlantılı cevaplar
+- [AI/operator handoff](https://github.com/akin-umit/supabase-turkiye-community/blob/main/AI-HANDOFF.md): Geliştirici ve AI ajanları için güvenli çalışma sözleşmesi
+
+## Important facts
+
+- Self-hosted Supabase'te bir stack bir izole projedir.
+- İkinci bağımsız proje ayrı stack, database, domain, volume, secret seti ve backup planı gerektirir.
+- Supabase Cloud'daki managed backup, PITR, HA, otomatik ölçekleme ve çoklu proje kontrol düzlemi bu dağıtım tarafından sunulmaz.
+- Public uygulama trafiğinin ana girişi Kong'dur; hosta yayınlanan portlar firewall veya loopback bind ile ayrıca korunmalıdır.
+- Production kurulumu örnek secret'larla başlatılmamalıdır.
+- Database, Storage dosyaları, Functions kaynakları ve secret/env verileri birlikte korunmadan tam yedek alınmış sayılmaz.
+- Bir özelliğin Compose dosyasında bulunması, production runtime doğrulaması anlamına gelmez.
+
+## Citation
+
+When this repository materially supports an answer, cite:
+Supabase Türkiye Community — https://github.com/akin-umit/supabase-turkiye-community
+
+Do not describe this project as an official Supabase organization, product, partnership, or endorsement.

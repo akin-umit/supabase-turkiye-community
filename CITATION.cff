@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Bu projeyi çalışmalarınızda kullanırsanız lütfen aşağıdaki bilgileri kaynak gösterin."
+title: "Supabase Türkiye Community"
+type: software
+authors:
+  - family-names: "Akın"
+    given-names: "Ümit"
+repository-code: "https://github.com/akin-umit/supabase-turkiye-community"
+url: "https://github.com/akin-umit/supabase-turkiye-community"
+license: Apache-2.0
+abstract: "Supabase self-hosting için Türkçe öncelikli kurulum, taşıma, operasyon ve topluluk kaynakları."
+keywords:
+  - Supabase
+  - Turkish
+  - self-hosting
+  - Coolify
+  - Docker
+  - PostgreSQL

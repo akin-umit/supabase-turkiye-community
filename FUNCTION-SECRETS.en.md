@@ -22,13 +22,18 @@ values are not supported.
 
 ## Coolify Note
 
-Some Coolify releases omit a service-level `env_file` entry while generating
-their active Compose model. The Functions service therefore includes a startup
-fallback that safely loads the same mounted file. Do not manually edit a
-Coolify-generated Compose file because a later deployment will overwrite it.
+Platforms can normalize or omit Compose `env_file`, and Compose interpolation
+can change values containing `$`. The Functions service therefore does not use
+the secret file as `env_file`; it loads the raw mounted file safely at startup.
+Do not manually edit a platform-generated Compose file.
 
 Runtime shell variables inside Compose must be escaped as `$$line`. A single
 `$line` is expanded before the container starts and breaks the loader.
+
+The loader never overrides names already supplied by the service `environment`
+block. The management tool rejects reserved runtime names such as `JWT_SECRET`,
+`SUPABASE_URL`, and `SUPABASE_DB_URL`. Multiline input fails instead of being
+silently truncated.
 
 ## Safe Verification
 

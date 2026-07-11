@@ -21,6 +21,12 @@ validate_name() {
     echo "ERROR: secret names must match ^[A-Z][A-Z0-9_]*$" >&2
     exit 1
   }
+  case "$1" in
+    JWT_SECRET|SUPABASE_JWKS|SUPABASE_URL|SUPABASE_PUBLIC_URL|SUPABASE_ANON_KEY|SUPABASE_SERVICE_ROLE_KEY|SUPABASE_PUBLISHABLE_KEYS|SUPABASE_SECRET_KEYS|SUPABASE_DB_URL|VERIFY_JWT)
+      echo "ERROR: $1 is reserved by the Edge Runtime service" >&2
+      exit 1
+      ;;
+  esac
 }
 
 prepare_file() {
@@ -36,7 +42,7 @@ case "$command_name" in
     ;;
   set)
     validate_name "$secret_name"
-    IFS= read -r secret_value || true
+    secret_value="$(cat)"
     [[ -n "$secret_value" ]] || {
       echo "ERROR: a non-empty value is required on standard input" >&2
       exit 1

@@ -31,4 +31,14 @@ if printf '%s\n' value | bash "$tool" set invalid-name >/dev/null 2>&1; then
   exit 1
 fi
 
+if printf 'line-one\nline-two\n' | bash "$tool" set MULTILINE_SECRET >/dev/null 2>&1; then
+  echo 'Multiline secret input was accepted.' >&2
+  exit 1
+fi
+
+if printf '%s\n' value | bash "$tool" set JWT_SECRET >/dev/null 2>&1; then
+  echo 'Reserved Edge Runtime variable was accepted.' >&2
+  exit 1
+fi
+
 echo 'Function secret management tests passed.'

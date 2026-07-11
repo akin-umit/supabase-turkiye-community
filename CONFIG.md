@@ -1169,6 +1169,13 @@ The fields below are repeated for each provider. Substitute `<PROVIDER>` with on
 
 ## Edge Functions
 
+Custom function secrets are stored in the Git-ignored
+`volumes/functions/.env` file and loaded from the raw Functions mount at Edge
+Runtime startup. The file is not a Compose `env_file`, so literal `$` characters
+are preserved. Existing service environment variables take precedence and
+reserved runtime names cannot be managed through this file. See
+[Edge Functions secret management](./FUNCTION-SECRETS.en.md).
+
 | Variable | Type | Set by | Description | Notes |
 |---|---|---|---|---|
 | `ALL_PROXY` / `all_proxy` | URL | | Default outbound proxy for all schemes for `fetch()` from user functions. | Read by `vendor/deno_fetch/proxy.rs` |

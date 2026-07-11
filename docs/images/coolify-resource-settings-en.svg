@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-labelledby="title">
+  <title id="title">Example Coolify Docker Compose resource settings</title><rect width="1100" height="520" fill="#151817"/><g font-family="Arial"><text x="55" y="58" fill="#fff" font-size="30" font-weight="700">Coolify - Resource Settings (example)</text>
+  <g fill="#aab6b1" font-size="17"><text x="55" y="112">Repository</text><text x="55" y="193">Branch</text><text x="55" y="274">Base Directory</text><text x="55" y="355">Docker Compose Location</text><text x="55" y="436">Preserve Repository During Deployment</text></g>
+  <g fill="#242927" stroke="#4a5d56"><rect x="55" y="125" width="990" height="45" rx="6"/><rect x="55" y="206" width="990" height="45" rx="6"/><rect x="55" y="287" width="990" height="45" rx="6"/><rect x="55" y="368" width="990" height="45" rx="6"/></g>
+  <g fill="#fff" font-size="19"><text x="73" y="155">YOUR_ACCOUNT/supabase-selfhost</text><text x="73" y="236">main</text><text x="73" y="317">/</text><text x="73" y="398">/docker-compose.yml</text></g>
+  <rect x="55" y="452" width="54" height="30" rx="15" fill="#2b8a6e"/><circle cx="93" cy="467" r="12" fill="#fff"/><text x="128" y="473" fill="#dce7e3" font-size="18">Enabled</text></g>
+</svg>

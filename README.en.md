@@ -104,6 +104,8 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 - [Deployment](./DEPLOYMENT.md)
 - [Coolify](./COOLIFY.md)
 - [Edge Functions secret management](./FUNCTION-SECRETS.en.md)
+- [Dashboard and control-plane roadmap](./DASHBOARD-ROADMAP.en.md)
+- [Isolated backup restore drill](./RESTORE-DRILL.en.md)
 - [Configuration reference](./CONFIG.md)
 - [Operations, backup, restore, and rollback](./OPERATIONS.md)
 - [Migration](./MIGRATION.md)

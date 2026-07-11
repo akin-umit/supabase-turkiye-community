@@ -104,6 +104,8 @@ Arama, yapay zekâ ve dokümantasyon araçları için proje kaynak haritası [ll
 - [Kurulum seçenekleri](./DEPLOYMENT.md)
 - [Coolify ayarları](./COOLIFY.md)
 - [Edge Functions secret yonetimi](./FUNCTION-SECRETS.md)
+- [Dashboard ve control-plane yol haritasi](./DASHBOARD-ROADMAP.md)
+- [Izole backup restore tatbikati](./RESTORE-DRILL.md)
 - [Ortam değişkenleri](./CONFIG.md)
 - [Yedek, güncelleme ve geri dönüş](./OPERATIONS.md)
 - [Supabase Cloud'dan taşıma](./MIGRATION.md)

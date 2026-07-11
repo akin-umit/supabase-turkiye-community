@@ -389,9 +389,6 @@ services:
     volumes:
       - ./volumes/functions:/home/deno/functions:z
       - deno-cache:/root/.cache/deno
-    env_file:
-      - path: ${FUNCTIONS_ENV_FILE:-./volumes/functions/.env}
-        required: false
     depends_on:
       kong:
         condition: service_started
@@ -420,7 +417,16 @@ services:
           while IFS= read -r line || [ -n "$$line" ]; do
             case "$$line" in
               ''|'#'*) continue ;;
-              *=*) export "$$line" ;;
+              *=*)
+                name="$${line%%=*}"
+                case "$$name" in
+                  ''|*[!A-Z0-9_]*|[0-9]*) continue ;;
+                esac
+                if printenv "$$name" >/dev/null 2>&1; then
+                  continue
+                fi
+                export "$$line"
+                ;;
             esac
           done < /home/deno/functions/.env
         fi

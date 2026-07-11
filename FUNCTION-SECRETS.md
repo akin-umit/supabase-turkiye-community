@@ -21,14 +21,18 @@ degerler desteklenmez.
 
 ## Coolify Notu
 
-Bazi Coolify surumleri kaynak Compose dosyasindaki servis `env_file` alanini
-etkin Compose modeline aktarmaz. Functions servisi bu nedenle ayni mount edilen
-dosyayi baslangicta guvenli bicimde yukleyen bir fallback icerir. Coolify'in
-urettigi Compose dosyasini elle degistirmeyin; sonraki deploy degisikligi siler.
+Bazi platformlar Compose `env_file` alanini farkli yorumlar veya kaldirir. Ayrica
+Compose, `$` iceren degerlerde interpolation uygulayabilir. Bu nedenle Functions
+servisi dosyayi `env_file` olarak tanimlamaz; raw mount uzerinden baslangicta
+guvenli bicimde yukler. Uretilen Compose dosyasini elle degistirmeyin.
 
 Compose icindeki runtime shell degiskenleri `$$line` seklinde kacirilmalidir.
 Tek `$line`, Compose tarafindan container baslamadan genisletilir ve loader'i
 bozar.
+
+Loader, servis `environment` blogunda zaten bulunan isimleri ezmez. Yonetim
+araci `JWT_SECRET`, `SUPABASE_URL`, `SUPABASE_DB_URL` ve diger cekirdek runtime
+isimlerini reddeder. Multiline girdi hata verir; sessizce kisaltilmaz.
 
 ## Guvenli Dogrulama
 

@@ -31,4 +31,23 @@ if printf '%s\n' value | bash "$tool" set invalid-name >/dev/null 2>&1; then
   exit 1
 fi
 
+if printf 'line-one\nline-two\n' | bash "$tool" set MULTILINE_SECRET >/dev/null 2>&1; then
+  echo 'Multiline secret input was accepted.' >&2
+  exit 1
+fi
+
+if printf 'value\n\n' | bash "$tool" set BLANK_LINE_SECRET >/dev/null 2>&1; then
+  echo 'Trailing blank-line multiline input was accepted.' >&2
+  exit 1
+fi
+
+if printf '%s\n' value | bash "$tool" set JWT_SECRET >/dev/null 2>&1; then
+  echo 'Reserved Edge Runtime variable was accepted.' >&2
+  exit 1
+fi
+
+printf '%s\n' 'JWT_SECRET=stale-value' >> "$FUNCTIONS_ENV_FILE"
+bash "$tool" unset JWT_SECRET >/dev/null
+! grep -q '^JWT_SECRET=' "$FUNCTIONS_ENV_FILE"
+
 echo 'Function secret management tests passed.'

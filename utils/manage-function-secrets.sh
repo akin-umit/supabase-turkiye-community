@@ -23,6 +23,15 @@ validate_name() {
   }
 }
 
+validate_set_name() {
+  case "$1" in
+    JWT_SECRET|SUPABASE_JWKS|SUPABASE_URL|SUPABASE_PUBLIC_URL|SUPABASE_ANON_KEY|SUPABASE_SERVICE_ROLE_KEY|SUPABASE_PUBLISHABLE_KEYS|SUPABASE_SECRET_KEYS|SUPABASE_DB_URL|VERIFY_JWT)
+      echo "ERROR: $1 is reserved by the Edge Runtime service" >&2
+      exit 1
+      ;;
+  esac
+}
+
 prepare_file() {
   mkdir -p "$(dirname "$secrets_file")"
   touch "$secrets_file"
@@ -36,7 +45,13 @@ case "$command_name" in
     ;;
   set)
     validate_name "$secret_name"
+    validate_set_name "$secret_name"
     IFS= read -r secret_value || true
+    extra_line=''
+    if IFS= read -r extra_line || [[ -n "$extra_line" ]]; then
+      echo "ERROR: multiline values are not supported" >&2
+      exit 1
+    fi
     [[ -n "$secret_value" ]] || {
       echo "ERROR: a non-empty value is required on standard input" >&2
       exit 1

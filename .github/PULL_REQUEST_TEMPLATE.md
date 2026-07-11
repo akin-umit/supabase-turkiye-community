@@ -23,6 +23,11 @@ Degisiklik neyi cozer?
 - [ ] Migration varsa rollback yolu yazildi
 - [ ] Upstream kaynak ve lisans kontrol edildi
 - [ ] `AGENTS.md` okundu ve son diff insan tarafından incelendi
+- [ ] Etkilenen Türkçe ve İngilizce belgeler aynı PR içinde güncellendi
+- [ ] Capability durumu kanıta göre `dahil`, `opsiyonel`, `sunulmuyor`, `planlanıyor` veya `doğrulanmadı` olarak yazıldı
+- [ ] `CHANGELOG.md` / `versions.md` etkisi kontrol edildi
+
+Belge değişikliği gerekmiyorsa gerekçe:
 
 ## AI Assistance / Yapay Zeka Desteği
 

@@ -109,6 +109,9 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 - [Platform capabilities](./PLATFORM-CAPABILITIES.md)
 - [AI/operator handoff](./AI-HANDOFF.md)
 - [Version history](./versions.md)
+- [Official Supabase README - Turkish explained translation](./docs/SUPABASE-RESMI-README-TR.md)
+- [Official Supabase README - English original](https://github.com/supabase/supabase/blob/master/README.md)
+- [Upstream documentation sync policy](./docs/UPSTREAM-DOC-SYNC.md)
 
 ## Contribution and Upstream Flow
 

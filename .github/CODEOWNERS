@@ -1,0 +1,6 @@
+* @akin-umit
+
+/.github/ @akin-umit
+/docker-compose*.yml @akin-umit
+/volumes/db/ @akin-umit
+/SECURITY.md @akin-umit

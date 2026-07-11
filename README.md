@@ -5,19 +5,29 @@
 
 </div>
 
-# OpenBase Stack
+# Supabase Turkiye Community
 
 [Turkce](#turkce) | [English](#english)
 
-> Independent community distribution. Not affiliated with, endorsed by, or sponsored by Supabase, Inc. Supabase is a trademark of its respective owner. This project adapts open-source components from the [Supabase repository](https://github.com/supabase/supabase).
+> Supabase ekosistemine Turkce dokumantasyon, self-host iyilestirmeleri ve acik kaynak katkilar sunan bagimsiz topluluk girisimi. Supabase tarafindan resmi olarak taninana kadar resmi temsilci degildir.
 
 ## Turkce
 
-OpenBase Stack, Supabase'in acik kaynak self-host Docker yapisini yeniden kurulabilir, Git ile yonetilen ve farkli platformlarda calistirilabilir hale getiren bagimsiz bir topluluk dagitimidir. Resmi Supabase Cloud hizmeti degildir.
+Supabase Turkiye Community; Supabase'in acik kaynak self-host yapisini gelistirmek, Turkce teknik kaynak uretmek, sorunlari tekrar uretilebilir hale getirmek ve uygun duzeltmeleri upstream Supabase projelerine tasimak icin kurulmustur.
 
 ## English
 
-OpenBase Stack is an independent community distribution that packages the open-source Supabase self-hosting stack for reproducible, Git-managed deployments across Compose-compatible platforms. It is not the managed Supabase Cloud service.
+Supabase Turkiye Community is an independent community initiative focused on Turkish documentation, reproducible self-hosting improvements, and responsible upstream contributions to the Supabase ecosystem. It is not the managed Supabase Cloud service or an official Supabase representative.
+
+## Contribution Flow / Katki Akisi
+
+1. Fikir veya hata once Issue/Discussion olarak kaydedilir.
+2. Gelistirici topluluk reposuna PR acar.
+3. CI, secret taramasi, lisans ve reviewer kontrolleri tamamlanir.
+4. Degisiklik `community-only`, `deployment-only` veya `upstream-candidate` olarak siniflandirilir.
+5. Upstream adayi degisiklik ayri ve temiz bir branch ile ilgili Supabase reposuna PR olarak gonderilir.
+
+Detaylar: [GOVERNANCE.md](./GOVERNANCE.md) ve [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md).
 
 > This repository is a reusable, Git-managed self-hosted Supabase distribution. It is not tied to any application or customer. One deployment represents one Supabase project.
 

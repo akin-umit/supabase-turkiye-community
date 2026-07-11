@@ -68,7 +68,7 @@ Domainin `https://supabase.ornek.com` ise:
 | Storage API | `https://supabase.ornek.com/storage/v1` |
 | Edge Functions | `https://supabase.ornek.com/functions/v1` |
 
-Sadece `kong` servisi internete açılır. PostgreSQL, Auth, Storage, Realtime ve diğer servisler Docker ağı içinde kalır.
+Public uygulama trafiği Kong üzerinden yönlendirilir. Compose'un hosta yayınladığı Kong ve Supavisor portları ayrıca firewall veya loopback bind ile sınırlandırılmalıdır; reverse proxy bu portları kendiliğinden kapatmaz. PostgreSQL, Auth, Storage, Realtime ve diğer iç servislere güvenilmeyen ağlardan doğrudan erişim verilmez.
 
 ## Güvenlik Uyarısı
 

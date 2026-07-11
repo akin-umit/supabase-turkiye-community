@@ -81,9 +81,11 @@ Bu repo güvenli anahtar üretmek için script içerir. En kolay güvenli yönte
 git clone https://github.com/KULLANICI_ADIN/supabase-selfhost.git
 cd supabase-selfhost
 cp .env.example .env
-sh utils/generate-keys.sh
+sh utils/generate-keys.sh --update-env
 sh utils/add-new-auth-keys.sh --update-env
 ```
+
+İkinci script `.env` yanında `docker-compose.yml` içindeki modern JWKS ayarlarını da etkinleştirir. Coolify kendi forkunu deploy ediyorsa değişen `docker-compose.yml` dosyasını kontrol edip forkundaki ayrı bir dala commit/push et; aksi halde Coolify eski Compose dosyasını kullanır. `.env` dosyasını kesinlikle commit etme.
 
 Sonra `.env` içindeki şu URL alanlarını kendi domainine göre değiştir:
 
@@ -125,7 +127,7 @@ Sunucuda terminal açıp çalıştır:
 git clone https://github.com/akin-umit/supabase-turkiye-community.git supabase-selfhost
 cd supabase-selfhost
 cp .env.example .env
-sh utils/generate-keys.sh
+sh utils/generate-keys.sh --update-env
 sh utils/add-new-auth-keys.sh --update-env
 ```
 
@@ -138,7 +140,7 @@ docker compose up -d
 docker compose ps
 ```
 
-Production'da Kong'un `8000` portunu Caddy, Nginx veya Traefik ile HTTPS arkasına al. PostgreSQL'i ve iç servisleri doğrudan internete açma.
+Production'da Kong'u Caddy, Nginx veya Traefik ile HTTPS arkasına al. Reverse proxy tek başına host üzerindeki `8000`, `8443`, `15432` veya `6543` portlarını kapatmaz. Firewall ya da loopback bind ayarıyla doğrudan erişimi engelle; yalnız gerekli HTTPS girişini aç. PostgreSQL ve Supavisor portlarını güvenilmeyen ağlara açma.
 
 ## Uygulamaya Bağlanmak İçin Anahtarlar
 

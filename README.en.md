@@ -61,7 +61,7 @@ If your domain is `https://supabase.example.com`:
 | Storage API | `https://supabase.example.com/storage/v1` |
 | Edge Functions | `https://supabase.example.com/functions/v1` |
 
-Only Kong should receive the public route. Database, Auth, REST, Realtime, Storage, Functions, Meta, Studio, and Supavisor remain on the private Compose network and are reached through Kong where applicable.
+Public application traffic is routed through Kong. Host-published Kong and Supavisor ports must also be restricted with firewall rules or loopback bindings; a reverse proxy does not close them automatically. Database, Auth, REST, Realtime, Storage, Functions, Meta, and Studio must not receive direct access from untrusted networks.
 
 ## Cloud and Self-Hosted Are Not Identical
 

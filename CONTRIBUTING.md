@@ -2,6 +2,8 @@
 
 Contributions are welcome from everyone.
 
+Human, AI-assisted, and AI-agent contributions are welcome. All contributors must read [AGENTS.md](./AGENTS.md). The human pull request author remains responsible for generated code, documentation, tests, security, and licensing.
+
 ## English
 
 1. Describe the problem and deployment environment without secrets.

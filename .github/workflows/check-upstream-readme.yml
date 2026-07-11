@@ -17,6 +17,8 @@ jobs:
       - name: Compare upstream README revision
         id: upstream
         shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           set +e
           output="$(sh scripts/check-upstream-readme.sh 2>&1)"

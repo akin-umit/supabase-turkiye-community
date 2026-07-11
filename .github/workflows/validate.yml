@@ -20,9 +20,9 @@ jobs:
           find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
       - name: Reject private deployment artifacts
         run: |
-          if grep -RInE '(aqenta\.com\.tr|supabase-v2|707539dd|e31f0009|dppkCbzp|Z5Ti_vV)' \
-            --exclude-dir=.git --exclude=validate.yml .; then
-            echo 'Private deployment identifier or known credential fragment detected.'
+          if grep -RInE '(sk_live_[A-Za-z0-9]{16,}|rk_live_[A-Za-z0-9]{16,}|whsec_[A-Za-z0-9]{24,}|gh[pousr]_[A-Za-z0-9]{20,}|-----BEGIN ([A-Z ]+ )?PRIVATE KEY-----)' \
+            --exclude-dir=.git .; then
+            echo 'Credential-like value or private key detected.'
             exit 1
           fi
 

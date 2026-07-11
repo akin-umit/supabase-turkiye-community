@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">Supabase self-hosting roadmap</title><desc id="desc">Fork, Coolify, domain, deploy, and Studio steps.</desc>
+  <rect width="1200" height="260" fill="#f7faf9"/><text x="60" y="52" font-family="Arial" font-size="28" font-weight="700" fill="#12221d">Your Supabase server in five steps</text>
+  <g font-family="Arial" text-anchor="middle"><g fill="#fff" stroke="#2b8a6e" stroke-width="3"><rect x="45" y="92" width="180" height="105" rx="8"/><rect x="280" y="92" width="180" height="105" rx="8"/><rect x="515" y="92" width="180" height="105" rx="8"/><rect x="750" y="92" width="180" height="105" rx="8"/><rect x="985" y="92" width="180" height="105" rx="8"/></g>
+  <g fill="#12221d" font-size="18" font-weight="700"><text x="135" y="130">1. Fork</text><text x="370" y="130">2. Add to Coolify</text><text x="605" y="130">3. Domain + keys</text><text x="840" y="130">4. Deploy</text><text x="1075" y="130">5. Open Studio</text></g>
+  <g fill="#4a5d56" font-size="15"><text x="135" y="165">Own the config</text><text x="370" y="165">Use Compose</text><text x="605" y="165">Generate secrets</text><text x="840" y="165">Check health</text><text x="1075" y="165">Manage project</text></g></g>
+  <g stroke="#2b8a6e" stroke-width="4"><path d="M230 145h43"/><path d="M465 145h43"/><path d="M700 145h43"/><path d="M935 145h43"/></g>
+</svg>

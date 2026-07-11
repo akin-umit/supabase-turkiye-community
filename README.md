@@ -7,7 +7,7 @@
 [![CI](https://github.com/akin-umit/supabase-turkiye-community/actions/workflows/validate.yml/badge.svg)](https://github.com/akin-umit/supabase-turkiye-community/actions/workflows/validate.yml)
 [![License](https://img.shields.io/badge/Lisans-Apache%202.0-blue.svg)](./LICENSE)
 
-[Türkçe kuruluma başla](./docs/TURKCE-KURULUM.md) · [Sorun bildir](https://github.com/akin-umit/supabase-turkiye-community/issues/new/choose) · [Soru sor](https://github.com/akin-umit/supabase-turkiye-community/discussions)
+[Türkçe kuruluma başla](./docs/TURKCE-KURULUM.md) · [English README](./README.en.md) · [Sorun bildir](https://github.com/akin-umit/supabase-turkiye-community/issues/new/choose) · [Soru sor](https://github.com/akin-umit/supabase-turkiye-community/discussions)
 
 </div>
 
@@ -105,7 +105,7 @@ Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS
 
 ## English
 
-Supabase Türkiye Community is an independent community initiative providing Turkish-first documentation, reproducible self-hosting improvements, and responsible upstream contributions. English contributor and technical documents remain available throughout the repository. Start with [DEPLOYMENT.md](./DEPLOYMENT.md) or [CONTRIBUTING.md](./CONTRIBUTING.md).
+Supabase Türkiye Community is an independent community initiative providing Turkish-first documentation, reproducible self-hosting improvements, and responsible upstream contributions. Read the complete [English README](./README.en.md), follow the [English setup guide](./docs/ENGLISH-SETUP.md), or start contributing through [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Lisans ve Marka
 

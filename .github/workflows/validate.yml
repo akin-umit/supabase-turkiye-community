@@ -20,7 +20,16 @@ jobs:
           find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
       - name: Reject private deployment artifacts
         run: |
-          if grep -RInE '(aqenta\.com\.tr|service_role.*eyJ|DASHBOARD_PASSWORD=[^$<{])' --exclude-dir=.git .; then
-            echo 'Private deployment artifact or credential-like value detected.'
+          if grep -RInE '(aqenta\.com\.tr|supabase-v2|707539dd|e31f0009|dppkCbzp|Z5Ti_vV)' \
+            --exclude-dir=.git --exclude=validate.yml .; then
+            echo 'Private deployment identifier or known credential fragment detected.'
+            exit 1
+          fi
+
+          forbidden_files="$(git ls-files | grep -E '(^|/)(\.env($|\.)|private/|backups/|.*\.(dump|sql\.gz|tar\.gz)$)' \
+            | grep -v '^\.env\.example$' || true)"
+          if [ -n "$forbidden_files" ]; then
+            echo 'Private environment or backup files must not be tracked:'
+            echo "$forbidden_files"
             exit 1
           fi

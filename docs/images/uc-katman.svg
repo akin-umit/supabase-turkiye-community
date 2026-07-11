@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="320" viewBox="0 0 1100 320" role="img" aria-labelledby="title">
+  <title id="title">GitHub, Coolify ve Supabase Studio farkı</title><rect width="1100" height="320" fill="#f7faf9"/>
+  <g font-family="Arial"><g fill="#fff" stroke="#2b8a6e" stroke-width="3"><rect x="50" y="70" width="280" height="180" rx="8"/><rect x="410" y="70" width="280" height="180" rx="8"/><rect x="770" y="70" width="280" height="180" rx="8"/></g>
+  <g fill="#12221d" font-size="27" font-weight="700" text-anchor="middle"><text x="190" y="120">GitHub</text><text x="550" y="120">Coolify</text><text x="910" y="120">Supabase Studio</text></g>
+  <g fill="#4a5d56" font-size="18" text-anchor="middle"><text x="190" y="165">Kurulum dosyaları</text><text x="190" y="195">ve değişiklik geçmişi</text><text x="550" y="165">Dosyaları sunucuda</text><text x="550" y="195">çalıştıran panel</text><text x="910" y="165">Tablo, kullanıcı ve</text><text x="910" y="195">Storage yönetimi</text></g>
+  <g stroke="#2b8a6e" stroke-width="5"><path d="M340 160h60"/><path d="M700 160h60"/></g></g>
+</svg>

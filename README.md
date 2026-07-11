@@ -92,6 +92,12 @@ Bu dağıtım; Supabase Studio, PostgreSQL, Auth, PostgREST, Realtime, Storage, 
 
 Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md)
 
+## Sık Sorulan Sorular ve Kaynak Keşfi
+
+Supabase Türkçe kurulum, Coolify, self-hosting, Cloud taşıma, yedekleme ve güvenlik hakkında kısa yanıtlar için [Türkçe Sık Sorulan Sorular](./docs/FAQ.md) sayfasını kullanabilirsin.
+
+Arama, yapay zekâ ve dokümantasyon araçları için proje kaynak haritası [llms.txt](./llms.txt) dosyasında; akademik ve teknik atıf bilgileri [CITATION.cff](./CITATION.cff) dosyasında bulunur. Bu dosyalar herhangi bir arama motorunun veya yapay zekâ sisteminin projeyi indekslemesini ya da kaynak göstermesini garanti etmez.
+
 ## Ayrıntılı Belgeler
 
 - [Türkçe resimli başlangıç](./docs/TURKCE-KURULUM.md)

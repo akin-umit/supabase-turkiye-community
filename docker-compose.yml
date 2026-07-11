@@ -377,6 +377,11 @@ services:
   functions:
     image: supabase/edge-runtime:v1.74.0
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "timeout 1 bash -c '</dev/tcp/127.0.0.1/9000'"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
     networks:
       default:
         aliases:
@@ -384,6 +389,9 @@ services:
     volumes:
       - ./volumes/functions:/home/deno/functions:z
       - deno-cache:/root/.cache/deno
+    env_file:
+      - path: ${FUNCTIONS_ENV_FILE:-./volumes/functions/.env}
+        required: false
     depends_on:
       kong:
         condition: service_started
@@ -405,12 +413,18 @@ services:
       SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST:-db}:${POSTGRES_INTERNAL_PORT:-5432}/${POSTGRES_DB}
       # TODO: Allow configuring VERIFY_JWT per function.
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT:-false}"
+    entrypoint: ["/bin/sh", "-c"]
     command:
-      [
-        "start",
-        "--main-service",
-        "/home/deno/functions/main"
-      ]
+      - |
+        if [ -f /home/deno/functions/.env ]; then
+          while IFS= read -r line || [ -n "$$line" ]; do
+            case "$$line" in
+              ''|'#'*) continue ;;
+              *=*) export "$$line" ;;
+            esac
+          done < /home/deno/functions/.env
+        fi
+        exec edge-runtime start --main-service /home/deno/functions/main
 
   # Comment out everything below this point if you are using an external Postgres database
   db:

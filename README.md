@@ -97,6 +97,7 @@ Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS
 - [Türkçe resimli başlangıç](./docs/TURKCE-KURULUM.md)
 - [Kurulum seçenekleri](./DEPLOYMENT.md)
 - [Coolify ayarları](./COOLIFY.md)
+- [Edge Functions secret yonetimi](./FUNCTION-SECRETS.md)
 - [Ortam değişkenleri](./CONFIG.md)
 - [Yedek, güncelleme ve geri dönüş](./OPERATIONS.md)
 - [Supabase Cloud'dan taşıma](./MIGRATION.md)

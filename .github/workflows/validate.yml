@@ -18,6 +18,8 @@ jobs:
       - name: Check shell syntax
         run: |
           find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+      - name: Test function secret management
+        run: bash tests/test-function-secrets.sh
       - name: Reject private deployment artifacts
         run: |
           if grep -RInE '(sk_live_[A-Za-z0-9]{16,}|rk_live_[A-Za-z0-9]{16,}|whsec_[A-Za-z0-9]{24,}|gh[pousr]_[A-Za-z0-9]{20,}|-----BEGIN ([A-Z ]+ )?PRIVATE KEY-----)' \

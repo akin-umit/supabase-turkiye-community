@@ -6,6 +6,8 @@
 - Documented Coolify repository preservation, private-service domain policy, and known DNS/mount failure modes.
 - Documented the one-stack-per-project self-hosting model and managed Cloud limitations.
 - Added permanent Docker network aliases required by Studio, Realtime, and Edge Runtime under Coolify.
+- Added verified file-based Edge Functions secret management with a Coolify-compatible startup fallback.
+- Fixed Compose project discovery in the container log smoke test and documented Vector IPv6 healthcheck diagnostics.
 
 All notable changes to the Supabase self-hosted Docker configuration.
 

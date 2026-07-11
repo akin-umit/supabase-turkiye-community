@@ -71,3 +71,7 @@ Bu repo ile:
 - Kong `name resolution failed` verirse compose network aliaslari kontrol edilir: `supabase-studio`, `supabase-edge-functions`, `realtime-dev.supabase-realtime`.
 - `POSTGRES_HOST`, `POSTGRES_HOSTNAME` dahili olarak `db`; dahili port `5432` olmalidir. Dis port yalniz host erisimi icindir.
 - Coolify ekrani eski commit gosteriyorsa redeploy yeterli degildir; once compose yeniden yuklenip kaydedilir.
+- Coolify acikca `docker compose -f docker-compose.yml` calistiriyorsa `.env` icindeki `COMPOSE_FILE` overlay listesi uygulanmaz. Opsiyonel servislerin gercekten calistigini container listesi ve log smoke testiyle dogrula.
+- Vector calisiyor fakat `unhealthy` gorunuyorsa health endpointinde `localhost` yerine servis icinden `127.0.0.1` veya Compose aginda `vector` adini kullan; `localhost` IPv6 `::1` olarak cozulebilir.
+- Runtime log testlerinde Compose proje adini sabitleme. `tests/test-container-logs.sh` varsayilan olarak calisma dizinini kullanir; gerekirse `COMPOSE_PROJECT_NAME` ile acikca ver.
+- Edge Functions secret modeli ve Coolify `env_file` fallback'i icin [FUNCTION-SECRETS.md](./FUNCTION-SECRETS.md) belgesini kullan.

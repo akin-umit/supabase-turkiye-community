@@ -12,7 +12,7 @@
 </div>
 
 > [!IMPORTANT]
-> This is an independent community initiative. It is not Supabase Cloud, is not operated by Supabase, and is not an official regional representative of Supabase. The upstream project is [supabase/supabase](https://github.com/supabase/supabase).
+> This project is not operated, supported, sponsored, or officially endorsed by Supabase. It is an independent Turkiye community initiative that uses Supabase open-source components. The upstream project is [supabase/supabase](https://github.com/supabase/supabase).
 
 ![Self-hosting roadmap](./docs/images/installation-roadmap-en.svg)
 

@@ -1,6 +1,6 @@
 # Notices / Bildirimler
 
-Supabase Turkiye Community is an independent community project and is not affiliated with, endorsed by, or sponsored by Supabase, Inc.
+This project is not operated, supported, sponsored, or officially endorsed by Supabase. It is an independent Turkiye community initiative that uses Supabase open-source components.
 
 Primary upstream sources:
 
@@ -9,4 +9,4 @@ Primary upstream sources:
 
 Supabase is a trademark of its respective owner. Use of the name is descriptive and identifies compatibility or upstream origin only.
 
-Supabase Turkiye Community bagimsiz bir topluluk girisimidir; Supabase, Inc. tarafindan resmi olarak taninana kadar resmi temsilci degildir. Supabase adi topluluk amacini, uyumlulugu ve upstream kaynagi tanimlamak icin kullanilir.
+Bu proje Supabase tarafindan isletilmez, desteklenmez, sponsor edilmez veya resmi olarak onaylanmaz. Supabase acik kaynak bilesenlerini kullanan bagimsiz bir Turkiye toplulugu calismasidir. Supabase adi topluluk amacini, uyumlulugu ve upstream kaynagi tanimlamak icin kullanilir.

@@ -156,6 +156,13 @@ Kurulumdan sonra uygulamanın ihtiyaç duyduğu temel değerler `.env` içindedi
 > [!CAUTION]
 > `SUPABASE_SECRET_KEY`, `SERVICE_ROLE_KEY` veya `POSTGRES_PASSWORD` değerini React/Vue/HTML gibi kullanıcıya giden frontend koduna koyma.
 
+## Edge Functions Secret Ayarı
+
+Fonksiyon secret değerlerini Git'e veya platformun ürettiği Compose dosyasına
+yazma. [Edge Functions secret yönetimi](../FUNCTION-SECRETS.md) belgesindeki
+`set`, Functions recreate ve sentetik kabul adımlarını uygula. Çekirdek Supabase
+değişkenleri bu araçla ezilemez; multiline girdi reddedilir.
+
 ## Sık Hatalar
 
 ### Sayfada `name resolution failed` Yazıyor

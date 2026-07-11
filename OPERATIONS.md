@@ -1,5 +1,11 @@
 # Operations Runbook
 
+After a backup job has verified its own checksum, or a migration job has
+completed successfully, it may publish sanitized dashboard state with
+`utils/publish-management-status.sh`. The publisher records an existing result;
+it does not perform backup or migration verification. See
+[MANAGEMENT-API.en.md](./MANAGEMENT-API.en.md).
+
 ## Gunluk Saglik Kontrolu
 
 ```bash

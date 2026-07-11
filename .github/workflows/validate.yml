@@ -20,6 +20,10 @@ jobs:
           find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
       - name: Test function secret management
         run: bash tests/test-function-secrets.sh
+      - name: Test management API
+        run: node --test management-api/server.test.mjs
+      - name: Test management status publisher
+        run: sh tests/test-management-status-publisher.sh
       - name: Check local Markdown links
         uses: lycheeverse/lychee-action@v2
         with:

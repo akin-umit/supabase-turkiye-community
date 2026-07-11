@@ -1,5 +1,10 @@
 # Deployment Guide
 
+The base stack includes an internal read-only operational Management API. Set a
+fresh `MANAGEMENT_API_TOKEN` before deployment. Do not publish port `8080`, add
+the service to Kong, mount the Docker socket, or pass its bearer token to
+browser code. See [MANAGEMENT-API.en.md](./MANAGEMENT-API.en.md).
+
 Bu belge sifir sunucu, yeniden kurulum ve farkli Docker Compose platformlari icin ana kaynaktir.
 
 ## Mimari

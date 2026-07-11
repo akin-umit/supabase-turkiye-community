@@ -17,6 +17,11 @@ Bu belge yalnız mevcut repository içeriğini ve doğrulanmış davranışı an
 
 ## Temel Stack
 
+Topluluk operasyon `management-api` servisi temel Compose icinde bulunur. Ic
+agda salt okunur servis sagligi ve sanitize backup/migration durumunu sunar.
+Supabase Platform Management API degildir ve Studio kartlari henuz bu servise
+bagli degildir. Ayrintilar: [MANAGEMENT-API.md](./MANAGEMENT-API.md).
+
 | Yetenek | Durum | Kanıt ve sınır |
 |---|---|---|
 | PostgreSQL | Dahil - varsayılan | `docker-compose.yml` içindeki `db` servisi. Backup, bakım ve HA kullanıcı sorumluluğudur. |
@@ -50,6 +55,10 @@ Temel Compose ve shell kontrolleri GitHub Actions içinde çalışır. Bu doğru
 Opsiyonel bir dosyanın repository içinde bulunması, bütün kombinasyonların aynı anda desteklendiği anlamına gelmez. Her kombinasyon ayrı Compose config ve smoke testi gerektirir.
 
 ## Supabase Cloud ile Farklar
+
+Asagidaki Supabase Platform Management API siniri degismemistir. Repository'deki
+topluluk operasyon API'si Cloud organization/proje kontrol duzleminin esdegeri
+degildir.
 
 | Cloud yeteneği | Self-host durumu |
 |---|---|

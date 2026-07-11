@@ -6,14 +6,16 @@ Tam sifir kurulum ve platform bagimsiz kurulum icin [DEPLOYMENT.md](./DEPLOYMENT
 
 ## Onerilen Akis
 
-1. GitHub'da repo olustur:
-   - Onerilen ad: `selfhost-supabase-platform`
+1. Kaynak repoyu hazirla:
+   - Public kaynak: `https://github.com/akin-umit/supabase-turkiye-community`
+   - Kendi degisikliklerini yoneteceksen repoyu GitHub hesabina forkla.
+   - Degisiklik yapmadan kullanacaksan public repoyu dogrudan Coolify kaynagi olarak sec.
 
 2. Coolify'de yeni resource:
    - Project: `Infrastructure` veya `Supabase`
    - Environment: `production`
    - Resource type: Docker Compose / Git repository
-   - Repository: `selfhost-supabase-platform`
+   - Repository: `akin-umit/supabase-turkiye-community` veya kendi fork adresin
    - Compose file: `docker-compose.yml`
    - Base Directory: `/`
    - Preserve Repository During Deployment: acik

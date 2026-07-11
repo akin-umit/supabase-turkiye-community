@@ -12,7 +12,7 @@
 </div>
 
 > [!IMPORTANT]
-> Bu proje bağımsız bir Türkiye topluluğu çalışmasıdır. Supabase tarafından yönetilen Supabase Cloud değildir ve henüz Supabase'in resmî Türkiye temsilcisi değildir. Kaynak proje: [supabase/supabase](https://github.com/supabase/supabase).
+> Bu proje Supabase tarafından işletilmez, desteklenmez, sponsor edilmez veya resmî olarak onaylanmaz. Supabase açık kaynak bileşenlerini kullanan bağımsız bir Türkiye topluluğu çalışmasıdır. Kaynak proje: [supabase/supabase](https://github.com/supabase/supabase).
 
 ![Kurulum yol haritası](./docs/images/kurulum-yol-haritasi.svg)
 

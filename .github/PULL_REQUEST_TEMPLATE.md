@@ -22,6 +22,16 @@ Degisiklik neyi cozer?
 - [ ] Secret/domain/musteri bilgisi eklenmedi
 - [ ] Migration varsa rollback yolu yazildi
 - [ ] Upstream kaynak ve lisans kontrol edildi
+- [ ] `AGENTS.md` okundu ve son diff insan tarafından incelendi
+
+## AI Assistance / Yapay Zeka Desteği
+
+- [ ] Anlamlı bir AI desteği kullanılmadı
+- [ ] AI desteği kullanıldı ve gönderilen her değişiklik insan tarafından doğrulandı
+
+Araç/model (isteğe bağlı; özel prompt veya kimlik bilgisi yazmayın):
+
+İnsan tarafından yapılan doğrulama:
 
 ## Upstream
 

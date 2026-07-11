@@ -50,9 +50,11 @@ Use a temporary Linux checkout to generate a real `.env`:
 git clone https://github.com/YOUR_ACCOUNT/YOUR_FORK.git supabase-selfhost
 cd supabase-selfhost
 cp .env.example .env
-sh utils/generate-keys.sh
+sh utils/generate-keys.sh --update-env
 sh utils/add-new-auth-keys.sh --update-env
 ```
+
+The second script also enables the modern JWKS settings in `docker-compose.yml`. If Coolify deploys your fork, review and commit/push the changed `docker-compose.yml` to a separate branch in that fork; otherwise Coolify continues to use the old Compose configuration. Never commit `.env`.
 
 Set your URLs:
 
@@ -86,7 +88,7 @@ Sign in with `DASHBOARD_USERNAME` and `DASHBOARD_PASSWORD`.
 git clone https://github.com/akin-umit/supabase-turkiye-community.git supabase-selfhost
 cd supabase-selfhost
 cp .env.example .env
-sh utils/generate-keys.sh
+sh utils/generate-keys.sh --update-env
 sh utils/add-new-auth-keys.sh --update-env
 ```
 
@@ -99,7 +101,7 @@ docker compose up -d
 docker compose ps
 ```
 
-For production, place Kong port `8000` behind an HTTPS reverse proxy such as Caddy, Nginx, or Traefik. Do not expose PostgreSQL or management services directly to the Internet.
+For production, place Kong behind an HTTPS reverse proxy such as Caddy, Nginx, or Traefik. A reverse proxy does not close host-published ports such as `8000`, `8443`, `15432`, or `6543`. Block direct access with firewall rules or loopback bindings, expose only the intended HTTPS entry point, and never expose PostgreSQL or Supavisor to untrusted networks.
 
 ## Application Credentials
 

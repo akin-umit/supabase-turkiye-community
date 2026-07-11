@@ -223,11 +223,11 @@ services:
 
       # GOTRUE_HOOK_SEND_SMS_ENABLED: "false"
       # GOTRUE_HOOK_SEND_SMS_URI: "pg-functions://postgres/public/custom_access_token_hook"
-      # GOTRUE_HOOK_SEND_SMS_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
+      # GOTRUE_HOOK_SEND_SMS_SECRETS: "v1,replace-with-your-webhook-secret"
 
       # GOTRUE_HOOK_SEND_EMAIL_ENABLED: "false"
       # GOTRUE_HOOK_SEND_EMAIL_URI: "http://host.docker.internal:54321/functions/v1/email_sender"
-      # GOTRUE_HOOK_SEND_EMAIL_SECRETS: "v1,whsec_VGhpcyBpcyBhbiBleGFtcGxlIG9mIGEgc2hvcnRlciBCYXNlNjQgc3RyaW5n"
+      # GOTRUE_HOOK_SEND_EMAIL_SECRETS: "v1,replace-with-your-webhook-secret"
 
   rest:
     image: postgrest/postgrest:v14.12

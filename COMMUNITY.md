@@ -18,7 +18,6 @@ Tanıtım konusu Supabase'in herkese açık GitHub Discussions alanında paylaş
 
 - [R10 — Supabase Türkiye Community tanıtımı](https://www.r10.net/proje-gelistirme-beyin-firtinasi-ortak-ariyorum/4824196-supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.html)
 - [Technopat Sosyal — Supabase Türkiye Community tanıtımı](https://www.technopat.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.4140557/)
-- [Techolay Sosyal — Supabase Türkiye Community tanıtımı](https://techolay.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosting-coolify-ve-docker-projesi.206628/)
 
 ## Kaynak kullanımı
 

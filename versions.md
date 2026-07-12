@@ -1,5 +1,8 @@
 # Docker Image Versions
 
+## 2026-07-12
+- ghcr.io/akin-umit/supabase-studio:c5c42a3e38e77e69c12cb9e65e263ca203669c3d (community Studio image with Operations, Usage, Observability Lite, Dashboard Preferences and Function Secrets isolation)
+
 ## 2026-07-07
 - supabase/studio:2026.07.07-sha-a6a04f2 (prev supabase/studio:2026.06.03-sha-0bca601)
 

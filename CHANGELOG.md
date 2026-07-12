@@ -5,6 +5,7 @@
 - Added Operations and Usage cards backed by self-hosted services.
 - Added Observability Lite through Query Performance and Dashboard Preferences.
 - Added persistent, redacted Function Secrets CRUD with Edge Runtime hot reload.
+- Published the community Studio image `ghcr.io/akin-umit/supabase-studio:c5c42a3e38e77e69c12cb9e65e263ca203669c3d`.
 - Documented the failed nested-mount rollout, rollback, isolated-volume fix, and
   successful stable redeployment.
 

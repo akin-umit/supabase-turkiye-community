@@ -66,3 +66,28 @@ kaydi ve rollback davranisi tanimlanmadan ozellik tamamlandi sayilmaz.
 - Yalniz kanit gosterir: backup ve migration durum kartlari.
 - Kalan: backup/restore job calistirma, migration uygulama ve ayri coklu proje
   control plane.
+
+## 2026-07-12 Durum Notu
+
+Topluluk Studio imaji artik self-host icin temel panel bosluklarini kapatan ilk
+paketi icerir: servis sagligi, deploy commit bilgisi, Logflare tabanli usage
+kartlari, Observability Lite, Dashboard Preferences ve kalici Function Secrets.
+
+Bu asama Supabase Cloud'un birebir kopyasi degildir. Cloud ekranlarindaki
+compute, request basari orani, altyapi haritasi, backup, migration, organization,
+team, proje olusturma ve billing verileri Supabase Platform control plane
+API'lerinden gelir. Self-host dagitimda bu veriler ancak kendi management API ve
+job runner katmanimizla uretilebilir.
+
+Siradaki kucuk paketler:
+
+1. Logflare verisinden API Gateway, Edge Functions, Postgres, Storage, Realtime
+   ve Auth icin daha zengin usage kartlari.
+2. Management API uzerinden sanitize altyapi ozeti ve connection bilgileri.
+3. Backup ve migration kartlarinda sadece "var/yok" yerine operator kaniti ve
+   runbook baglantisi.
+4. Panelden backup/restore/migration calistirmadan once yetkili, idempotent ve
+   audit loglu job runner tasarimi.
+
+Bu siralama korunacak: once read-only kanit, sonra kontrollu operasyon, en son
+coklu proje control plane.

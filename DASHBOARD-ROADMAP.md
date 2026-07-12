@@ -58,3 +58,11 @@ Platform API'lerini cagirir.
 
 Her kart icin backend kaynagi, yetki siniri, loading/error durumu, test, audit
 kaydi ve rollback davranisi tanimlanmadan ozellik tamamlandi sayilmaz.
+
+## Guncel Teslim Durumu
+
+- Tamamlandi: Operations, Usage, Observability Lite, Dashboard Preferences ve
+  kalici Function Secrets CRUD.
+- Yalniz kanit gosterir: backup ve migration durum kartlari.
+- Kalan: backup/restore job calistirma, migration uygulama ve ayri coklu proje
+  control plane.

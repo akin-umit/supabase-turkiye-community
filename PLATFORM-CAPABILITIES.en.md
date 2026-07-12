@@ -65,3 +65,16 @@ A capability is runtime-verified only when evidence records the commit SHA, sele
 Without that evidence, documentation may say **included**, **optional**, or **unverified**, but must not claim production validation.
 
 Documentation update rules: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md).
+
+## Verified Community Studio Extensions
+
+| Capability | Verified boundary |
+|---|---|
+| Operations cards | Read-only service health and deployed commit from the internal Management API. |
+| Usage cards | Last-24-hour aggregation from self-hosted Logflare raw tables. |
+| Observability Lite | Query Performance only; cloud control-plane reports remain disabled. |
+| Dashboard Preferences | Local browser preferences with no platform API or billing dependency. |
+| Function Secrets | Redacted CRUD, persistent named volume, and Edge Runtime hot reload. |
+
+Backup and migration cards display only operator-published status evidence. The
+dashboard does not yet create backups, execute restores, or apply migrations.

@@ -60,3 +60,11 @@ the open-source stack.
 
 A card is not complete until its backend source, authorization boundary,
 loading/error state, tests, audit evidence, and rollback behavior are defined.
+
+## Current Delivery Status
+
+- Completed: Operations, Usage, Observability Lite, Dashboard Preferences, and
+  persistent Function Secrets CRUD.
+- Evidence-only: backup and migration status cards.
+- Remaining: backup/restore job execution, migration execution, and a separate
+  multi-project control plane.

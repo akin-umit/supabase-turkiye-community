@@ -1,53 +1,35 @@
 # Edge Functions Secret Yonetimi
 
-Supabase Cloud'daki secret CRUD ekrani managed control plane'e aittir. Self-host
-kurulumda desteklenen model, Edge Runtime'a environment variable saglamaktir.
-Bu repository bunu Git'e secret yazmadan tasinabilir bir dosya ile uygular.
+Self-host Studio, Edge Function secret degerlerini versioned JSON store uzerinden
+yonetebilir. Degerler kaydedildikten sonra tekrar gosterilmez; liste API'si
+yalniz ad, guncelleme zamani ve SHA-256 digest dondurur.
 
-## Kullanim
+## Calisma modeli
 
-Varsayilan dosya `volumes/functions/.env` olur, `0600` izniyle saklanir ve Git
-tarafindan izlenmez.
+- Studio path: `/app/function-secrets/.supabase/function-secrets.json`
+- Edge Runtime path: `/run/function-secrets/.supabase/function-secrets.json`
+- Kalicilik: `function-secrets` named volume
+- Yeni dosya modu: `0600`
+- Uygulama: sonraki function isteginde hot reload; container restart gerekmez
 
-```bash
-printf '%s\n' "$DEGER" | bash utils/manage-function-secrets.sh set SECRET_ADI
-bash utils/manage-function-secrets.sh list
-bash utils/manage-function-secrets.sh unset SECRET_ADI
-docker compose up -d --force-recreate functions
-```
+Function kaynaklari Studio'da salt okunur kalir. Secret volume kaynak bind
+mountundan ayridir; bu ayrim Coolify release dizini degisimlerinde kaliciligi
+korur ve nested mount sorununu onler.
 
-`list` yalniz adlari gosterir. Degerler komut ciktisina yazilmaz. Cok satirli
-degerler desteklenmez.
+`SUPABASE_*`, `SB_*`, `DENO_*`, `JWT_SECRET` ve `VERIFY_JWT` gibi runtime
+isimleri yonetilemez. Gecersiz store son gecerli snapshot'i bozmaz ve loglara
+secret degeri yazilmaz.
 
-## Coolify Notu
+## Guvenli dogrulama
 
-Bazi platformlar Compose `env_file` alanini farkli yorumlar veya kaldirir. Ayrica
-Compose, `$` iceren degerlerde interpolation uygulayabilir. Bu nedenle Functions
-servisi dosyayi `env_file` olarak tanimlamaz; raw mount uzerinden baslangicta
-guvenli bicimde yukler. Uretilen Compose dosyasini elle degistirmeyin.
+1. Studio'da **Edge Functions > Secrets** sayfasini acin.
+2. Sentetik ve hassas olmayan bir secret ekleyin.
+3. Listede plaintext yerine digest gorundugunu kontrol edin.
+4. Yalniz degiskenin varligini boolean olarak donduren smoke function cagirin.
+5. Secret'i guncelleyin; restart yapmadan sonraki istekte degisikligi dogrulayin.
+6. Secret'i silin ve sonraki istekte kaldirildigini dogrulayin.
+7. Redeploy sonrasi listenin named volume sayesinde korundugunu kontrol edin.
 
-Compose icindeki runtime shell degiskenleri `$$line` seklinde kacirilmalidir.
-Tek `$line`, Compose tarafindan container baslamadan genisletilir ve loader'i
-bozar.
-
-Loader, servis `environment` blogunda zaten bulunan isimleri ezmez. Yonetim
-araci `JWT_SECRET`, `SUPABASE_URL`, `SUPABASE_DB_URL` ve diger cekirdek runtime
-isimlerini reddeder. Multiline girdi hata verir; sessizce kisaltilmaz.
-
-## Guvenli Dogrulama
-
-Sentetik bir secret ekleyin, Functions container'ini yeniden olusturun ve degeri
-yazdirmadan yalniz PID 1 environment'inda adini kontrol edin:
-
-```bash
-docker exec "$FUNCTIONS_CONTAINER" sh -c \
-  'tr "\000" "\n" < /proc/1/environ | grep -q "^SYNTHETIC_SECRET="'
-```
-
-`docker exec ... test -n "$SYNTHETIC_SECRET"` yanlis negatif verebilir. Yeni
-exec sureci, entrypoint'in PID 1'e sonradan export ettigi degiskenleri miras
-almaz. Test bittiginde sentetik secret'i kaldirin ve container'i yeniden
-olusturun.
-
-Bu ozellik Supabase Cloud secret panelinin birebir kopyasi degildir; self-host
-Edge Runtime icin denetlenebilir dosya tabanli secret yonetimidir.
+Secret dosyasini Git'e, image'a, deployment loguna veya sifresiz backup'a
+eklemeyin. Bu ozellik Supabase Cloud control plane kopyasi degildir; tek
+self-host stack icin denetlenebilir secret CRUD ve runtime yukleme katmanidir.

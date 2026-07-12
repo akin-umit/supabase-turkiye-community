@@ -95,4 +95,18 @@ Bir capability ancak aşağıdaki kanıtlar raporlandığında runtime doğrulan
 
 Bu kanıtlar yoksa belge yalnız **dahil**, **opsiyonel** veya **doğrulanmadı** diyebilir; production garantisi veremez.
 
+## Doğrulanmış Topluluk Studio Ekleri
+
+| Yetenek | Doğrulanmış sınır |
+|---|---|
+| Operations kartları | İç Management API üzerinden salt okunur servis sağlığı ve deploy commit'i. |
+| Usage kartları | Self-host Logflare ham tablolarından son 24 saat toplamı. |
+| Observability Lite | Yalnız Query Performance; Cloud control-plane raporları kapalı kalır. |
+| Dashboard Preferences | Tarayıcıya yerel tercihler; Platform API veya billing bağımlılığı yoktur. |
+| Function Secrets | Redacted CRUD, kalıcı named volume ve Edge Runtime hot reload. |
+
+Backup ve migration kartları yalnız operatörün yayınladığı durum kanıtını
+gösterir. Panel henüz backup oluşturmaz, restore çalıştırmaz veya migration
+uygulamaz.
+
 Belge güncelleme kuralları: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md).

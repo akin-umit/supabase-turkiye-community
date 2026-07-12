@@ -1,5 +1,13 @@
 # Changelog
 
+## Self-hosted Studio operations and secrets - 2026-07-12
+
+- Added Operations and Usage cards backed by self-hosted services.
+- Added Observability Lite through Query Performance and Dashboard Preferences.
+- Added persistent, redacted Function Secrets CRUD with Edge Runtime hot reload.
+- Documented the failed nested-mount rollout, rollback, isolated-volume fix, and
+  successful stable redeployment.
+
 ## Local distribution notes - 2026-07-11
 
 - Added reusable deployment, operations, migration, capability, and AI handoff documentation.

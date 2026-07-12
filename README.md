@@ -99,7 +99,6 @@ Proje duyuruları, herkese açık geri bildirimler ve topluluk tartışmaları i
 - [Supabase Community — GitHub Discussions](https://github.com/orgs/supabase/discussions/47844)
 - [R10 tanıtım konusu](https://www.r10.net/proje-gelistirme-beyin-firtinasi-ortak-ariyorum/4824196-supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.html)
 - [Technopat Sosyal tanıtım konusu](https://www.technopat.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.4140557/)
-- [Techolay Sosyal tanıtım konusu](https://techolay.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosting-coolify-ve-docker-projesi.206628/)
 
 Bağlantıların sınıflandırması, canonical kaynak kuralı ve yeni topluluk kanalları için [Topluluk ve Proje Tanıtımları](./COMMUNITY.md) dizinine bakabilirsin. Bu paylaşımlar bağımsız topluluk duyurularıdır; resmî Supabase onayı veya ortaklığı anlamına gelmez.
 

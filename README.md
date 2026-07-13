@@ -92,6 +92,16 @@ Bu dağıtım; Supabase Studio, PostgreSQL, Auth, PostgREST, Realtime, Storage, 
 
 Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md)
 
+## Toplulukta Bizi Bul
+
+Proje duyuruları, herkese açık geri bildirimler ve topluluk tartışmaları için:
+
+- [Supabase Community — GitHub Discussions](https://github.com/orgs/supabase/discussions/47844)
+- [R10 tanıtım konusu](https://www.r10.net/proje-gelistirme-beyin-firtinasi-ortak-ariyorum/4824196-supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.html)
+- [Technopat Sosyal tanıtım konusu](https://www.technopat.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.4140557/)
+
+Bağlantıların sınıflandırması, canonical kaynak kuralı ve yeni topluluk kanalları için [Topluluk ve Proje Tanıtımları](./COMMUNITY.md) dizinine bakabilirsin. Bu paylaşımlar bağımsız topluluk duyurularıdır; resmî Supabase onayı veya ortaklığı anlamına gelmez.
+
 ## Sık Sorulan Sorular ve Kaynak Keşfi
 
 Supabase Türkçe kurulum, Coolify, self-hosting, Cloud taşıma, yedekleme ve güvenlik hakkında kısa yanıtlar için [Türkçe Sık Sorulan Sorular](./docs/FAQ.md) sayfasını kullanabilirsin.

@@ -73,6 +73,11 @@ gerekli forum/discussion notu hazirlandiktan sonra yayinlanir. Kural:
 - Kalan: backup/restore job calistirma, migration uygulama ve ayri coklu proje
   control plane.
 
+Yeni Studio paketlerinde once korunacak yuzeyler: Function Secrets, API Keys,
+JWT/JWKS, Operations, Usage, Observability Lite, Dashboard Preferences, Connect,
+status hover ve copy menu. Bu yuzeylerden biri kaybolursa yeni paket release
+kabul edilmez; once regresyon giderilir.
+
 ## Kabul Edilmeyen veya Karistirilmamasi Gerekenler
 
 - Public route `503` donduruyorsa dashboard veya API key testi basarili
@@ -83,6 +88,9 @@ gerekli forum/discussion notu hazirlandiktan sonra yayinlanir. Kural:
   backendinin hazir oldugu anlamina gelmez.
 - Backup ve migration kartlari su an operator kaniti gosterir; panel henuz
   backup olusturmaz, restore calistirmaz veya migration uygulamaz.
+- Bir route'un acilmasi dashboard parity sayilmaz. Hover, dropdown, filtre,
+  siralama, create butonlari, nested tablar, hata/bos durumlari ve uzun
+  sayfalarda scroll kapsami kontrol edilmeden sayfa tamamlandi denmez.
 
 ## Operator Icin Kisa Durum
 
@@ -135,6 +143,28 @@ Coolify/Kong calismalarinda iki onemli ders netlesti:
 Bu not, public community icin geneldir. Her production ortaminda son karar
 container health, deploy commit, Compose config ve read-only smoke kanitiyla
 verilir.
+
+## 2026-07-14 Etkilesim Denetimi
+
+Resmi Supabase dashboard davranislari self-host planina su ilave ayrimlari
+getirdi:
+
+- Project Home icin siradaki paket, genis route kopyalama degil; compact
+  status, copy menu, self-host operasyon kartlari, usage kartlari ve
+  backup/migration kanit kartlaridir.
+- Observability ve Logs, yalniz sayfa listesi degil; zaman araligi secicileri,
+  filtreler, metrik kartlari, bos/hata durumlari ve Logflare/Vector kaynak
+  durumlariyla birlikte degerlendirilir.
+- Integrations icin Data API, Vault, Cron ve Database Webhooks self-hostta
+  extension/servis durumuyla gosterilebilir. Cloud-only wrapper ve entegrasyonlar
+  ancak acik kaynak karsiligi kuruldugunda aktif sayilir.
+- Settings icin API Keys, JWT/JWKS, Auth/SMTP, Storage ve Realtime gibi
+  config-backed ayarlar aktif olabilir. Managed compute, PITR, billing,
+  subscription, Cloud Log Drains ve hosted AI Assistant ise ayri operator
+  backend olmadan aktif gosterilmez.
+
+Siradaki uygulama sirasi: once read-only self-host kanit, sonra kontrollu panel
+operasyonlari, en son ayri coklu proje control plane.
 
 ## Community Planlama ve Forum Yayini
 

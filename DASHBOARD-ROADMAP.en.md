@@ -75,6 +75,12 @@ changelog links, and the required forum/Discussion note are prepared. Rule:
 - Remaining: backup/restore job execution, migration execution, and a separate
   multi-project control plane.
 
+Every new Studio package must preserve the accepted self-host surfaces first:
+Function Secrets, API Keys, JWT/JWKS, Operations, Usage, Observability Lite,
+Dashboard Preferences, Connect, status hover, and the copy menu. If one of
+those surfaces disappears, the package is not accepted as a release until the
+regression is fixed.
+
 ## Not Accepted or Easy to Misread
 
 - If the public route returns `503`, dashboard or API-key smoke is not accepted.
@@ -84,6 +90,9 @@ changelog links, and the required forum/Discussion note are prepared. Rule:
   backend exists for it.
 - Backup and migration cards currently show operator evidence only; the panel
   does not yet create backups, run restores, or apply migrations.
+- Rendering a route is not dashboard parity. Hover states, dropdowns, filters,
+  sort controls, create buttons, nested tabs, empty/error states, and scroll
+  coverage on long pages must be checked before a page is marked complete.
 
 ## Operator Summary
 
@@ -112,6 +121,29 @@ Two lessons from the Coolify/Kong work are now part of the public guidance:
 This note is generic community guidance. In production, the final answer still
 comes from container health, deployed commit, Compose config, and read-only
 smoke evidence.
+
+## 2026-07-14 Interaction Audit
+
+The official Supabase dashboard behavior adds these self-host planning
+boundaries:
+
+- The next Project Home package is not broad route cloning. It is compact
+  status, copy menu, self-host operations cards, usage cards, and
+  backup/migration evidence cards.
+- Observability and Logs are not only page lists. They include time-range
+  selectors, filters, metric cards, empty/error states, and Logflare/Vector
+  source status.
+- For Integrations, Data API, Vault, Cron, and Database Webhooks can be shown as
+  self-host surfaces when the required extension or service state exists.
+  Cloud-only wrappers and integrations are active only when an open-source
+  equivalent is deployed and verified.
+- For Settings, API Keys, JWT/JWKS, Auth/SMTP, Storage, and Realtime can be
+  active when backed by current config. Managed compute, PITR, billing,
+  subscription, Cloud Log Drains, and hosted AI Assistant remain disabled or
+  planned unless a separate operator backend exists.
+
+The delivery order remains: read-only self-host evidence first, controlled panel
+operations second, and a separate multi-project control plane last.
 
 ## Community Planning and Discussion Posts
 

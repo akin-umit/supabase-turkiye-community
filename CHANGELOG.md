@@ -1,5 +1,27 @@
 # Changelog
 
+## Dashboard parity audit documentation - 2026-07-14
+
+- Added public-safe notes from the dashboard interaction audit.
+- Clarified that route rendering is not dashboard parity; hover states,
+  dropdowns, filters, nested tabs, empty/error states and scroll coverage still
+  need verification.
+- Added the preserve-first regression rule for new Studio packages: Function
+  Secrets, API Keys, JWT/JWKS, Operations, Usage, Observability Lite and
+  Dashboard Preferences must not disappear.
+- Clarified which settings can be self-host-active and which require a separate
+  operator backend or control plane.
+- Kept backup and migration cards as evidence-only until a job runner with
+  authorization, idempotency, audit logging and rollback exists.
+
+Related documents:
+
+- [Dashboard roadmap](./DASHBOARD-ROADMAP.md#2026-07-14-etkilesim-denetimi)
+- [Dashboard roadmap English](./DASHBOARD-ROADMAP.en.md#2026-07-14-interaction-audit)
+- [Platform capabilities](./PLATFORM-CAPABILITIES.md#dashboard-ayarlarini-aktif-gosterme-kurali)
+- [Platform capabilities English](./PLATFORM-CAPABILITIES.en.md#rule-for-showing-dashboard-settings-as-active)
+- [GitHub Discussions plan](./DISCUSSIONS.md)
+
 ## Community planning and publication rules - 2026-07-14
 
 - Added a permanent private-test to public-community publication flow.

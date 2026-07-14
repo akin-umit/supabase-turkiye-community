@@ -77,6 +77,22 @@ degildir.
 
 Bu özellikler “yakında gelecek” olarak kabul edilmez. Yalnız onaylanmış ve bağlantılı bir Issue/roadmap varsa **Planlanıyor** olarak eklenebilir.
 
+## Dashboard Ayarlarini Aktif Gosterme Kurali
+
+Bir Supabase Cloud ayari self-host panelde yalniz gorunuyor diye aktif
+sayilmaz. Her ayar once asagidaki siniflardan birine girer:
+
+| Ayar grubu | Public durum |
+|---|---|
+| API keys, JWT/JWKS, Auth providers, SMTP, Storage limitleri, Realtime ayarlari | Config ve servis durumu okunabiliyorsa aktif gosterilebilir. |
+| Data API, Vault, Cron, Database Webhooks | Gerekli servis veya PostgreSQL extension mevcutsa aktif veya kurulum gerekli olarak gosterilebilir. |
+| Logs ve Observability | Logflare/Vector etkin ve sorgu kaynagi saglikliyse aktif; degilse kurulum/disabled durumu gosterilir. |
+| Managed compute resize, disk autoscaling, PITR, billing, subscription, Cloud Log Drains, hosted AI Assistant | Tek Docker stack icinde sunulmaz; ayri operator backend yoksa disabled/planned kalir. |
+| Backup/restore, migration apply, function deploy/restart/log actions | RBAC, idempotency, audit log ve rollback olan job runner olmadan aktif buton olmaz. |
+
+Bu kuralin amaci Cloud gorunumunu taklit ederken kullaniciyi yaniltmamaktir:
+self-host-safe equivalent varsa aktif edilir; yoksa sinir acik yazilir.
+
 ## Extension, Integration ve Client Ayrımı
 
 1. **PostgreSQL extension:** Image içinde mevcutsa SQL veya Studio üzerinden etkinleştirilebilir. Image içinde olmayan extension için özel image ve migration testi gerekir.
@@ -109,6 +125,10 @@ Bu kanıtlar yoksa belge yalnız **dahil**, **opsiyonel** veya **doğrulanmadı*
 | Observability Lite | Yalnız Query Performance; Cloud control-plane raporları kapalı kalır. |
 | Dashboard Preferences | Tarayıcıya yerel tercihler; Platform API veya billing bağımlılığı yoktur. |
 | Function Secrets | Redacted CRUD, kalıcı named volume ve Edge Runtime hot reload. |
+
+Yeni Studio paketleri bu yuzeyleri korumadan public release kabul edilmez.
+Function Secrets, API Keys, JWT/JWKS, Operations, Usage, Observability Lite ve
+Dashboard Preferences regresyon kontrol listesinin zorunlu parcasidir.
 
 Backup ve migration kartları yalnız operatörün yayınladığı durum kanıtını
 gösterir. Panel henüz backup oluşturmaz, restore çalıştırmaz veya migration

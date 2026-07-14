@@ -63,6 +63,22 @@ for Auth, Storage, or Realtime.
 
 These are not described as planned unless an accepted and linked Issue or roadmap item exists.
 
+## Rule for Showing Dashboard Settings as Active
+
+A Supabase Cloud setting is not active in self-host just because the screen is
+visible. Every setting is classified before the UI presents it as working:
+
+| Setting family | Public status |
+|---|---|
+| API keys, JWT/JWKS, Auth providers, SMTP, Storage limits, Realtime settings | Can be active when current config and service state can be read safely. |
+| Data API, Vault, Cron, Database Webhooks | Can be active or setup-required when the required service or PostgreSQL extension exists. |
+| Logs and Observability | Active only when Logflare/Vector and the query source are healthy; otherwise show setup or disabled state. |
+| Managed compute resize, disk autoscaling, PITR, billing, subscription, Cloud Log Drains, hosted AI Assistant | Not provided by a single Docker stack; keep disabled or planned unless a separate operator backend exists. |
+| Backup/restore, migration apply, function deploy/restart/log actions | No active button until a job runner provides RBAC, idempotency, audit logs, and rollback behavior. |
+
+The goal is not fake Cloud parity. Use a self-host-safe equivalent when it
+exists; otherwise explain the boundary.
+
 ## Runtime Verification Contract
 
 A capability is runtime-verified only when evidence records the commit SHA, selected overlays, Compose validation, stable container health/restarts, read-only endpoint smoke test, persistent-data visibility where relevant, and rollback path.
@@ -80,6 +96,10 @@ Documentation update rules: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINT
 | Observability Lite | Query Performance only; cloud control-plane reports remain disabled. |
 | Dashboard Preferences | Local browser preferences with no platform API or billing dependency. |
 | Function Secrets | Redacted CRUD, persistent named volume, and Edge Runtime hot reload. |
+
+New Studio packages are not accepted as public releases unless these surfaces
+are preserved. Function Secrets, API Keys, JWT/JWKS, Operations, Usage,
+Observability Lite, and Dashboard Preferences are mandatory regression checks.
 
 Backup and migration cards display only operator-published status evidence. The
 dashboard does not yet create backups, execute restores, or apply migrations.

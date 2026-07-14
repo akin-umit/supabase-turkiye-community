@@ -98,6 +98,8 @@ Yönetim kuralları: [GOVERNANCE.md](./GOVERNANCE.md) · [UPSTREAM-CONTRIBUTIONS
 
 Proje duyuruları, herkese açık geri bildirimler ve topluluk tartışmaları için:
 
+- [Gelistirme Gunlugu / Development Log](https://github.com/akin-umit/supabase-turkiye-community/discussions/18)
+- [Yol Haritasi ve Katki Plani / Roadmap and Contribution Plan](https://github.com/akin-umit/supabase-turkiye-community/discussions/19)
 - [Supabase Community — GitHub Discussions](https://github.com/orgs/supabase/discussions/47844)
 - [R10 tanıtım konusu](https://www.r10.net/proje-gelistirme-beyin-firtinasi-ortak-ariyorum/4824196-supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.html)
 - [Technopat Sosyal tanıtım konusu](https://www.technopat.net/sosyal/konu/supabase-turkiye-community-turkce-self-hosted-coolify-ve-docker-kaynak-projesi.4140557/)

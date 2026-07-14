@@ -27,6 +27,19 @@ GitHub Discussions yalniz Ingilizce kategori basliklariyla kullanilacaksa Turkce
 etiket aciklamaya yazilir. Turkce baslik kullanilacaksa Ingilizce etiket
 aciklamaya yazilir.
 
+## Live Discussion Threads / Canli Tartisma Basliklari
+
+These are the first canonical public threads. Use them instead of scattering
+updates across unrelated channels.
+
+Ilk canonical public basliklar bunlardir. Guncellemeleri daginik kanallara
+yazmak yerine bu basliklara baglayin.
+
+| Thread | Purpose |
+|---|---|
+| [Gelistirme Gunlugu / Development Log](https://github.com/akin-umit/supabase-turkiye-community/discussions/18) | Short bilingual summaries of completed work, validation status, and links to changelog/roadmap/PRs. |
+| [Yol Haritasi ve Katki Plani / Roadmap and Contribution Plan](https://github.com/akin-umit/supabase-turkiye-community/discussions/19) | Public roadmap discussion, feature ideas, contribution planning, and upstream-candidate coordination. |
+
 ## What Goes Into Discussions / Discussions'a Ne Yazilir?
 
 Every public update should be short and linked:
@@ -154,4 +167,3 @@ Yayinlanmayacaklar:
 - [Platform capabilities](./PLATFORM-CAPABILITIES.md)
 - [Community publication flow](./COMMUNITY-PUBLICATION-FLOW.md)
 - [Documentation maintenance contract](./DOCUMENTATION-MAINTENANCE.md)
-

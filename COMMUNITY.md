@@ -4,6 +4,8 @@ Supabase Türkiye Community'nin teknik içeriği için ana ve canonical kaynak b
 
 - **Canonical repository:** https://github.com/akin-umit/supabase-turkiye-community
 - **Repository Discussions:** https://github.com/akin-umit/supabase-turkiye-community/discussions
+- **Gelistirme Gunlugu / Development Log:** https://github.com/akin-umit/supabase-turkiye-community/discussions/18
+- **Yol Haritasi ve Katki Plani / Roadmap and Contribution Plan:** https://github.com/akin-umit/supabase-turkiye-community/discussions/19
 - **Issue tracker:** https://github.com/akin-umit/supabase-turkiye-community/issues
 
 Aşağıdaki sayfalar proje duyurularını, topluluk geri bildirimlerini ve herkese açık tartışmaları içerir. Bu bağlantılar bağımsız topluluk paylaşımlarıdır; Supabase tarafından resmî onay, destek, sponsorluk veya ortaklık anlamına gelmez.
@@ -24,3 +26,7 @@ Tanıtım konusu Supabase'in herkese açık GitHub Discussions alanında paylaş
 Bir forum gönderisi ile repository belgesi arasında farklılık varsa repository'nin `main` dalındaki güncel belge esas alınır. Forum sayfaları duyuru ve geri bildirim kanalıdır; kurulum komutu, güvenlik kararı, migration adımı veya platform yeteneği için canonical teknik kaynak değildir.
 
 Bu dizin son olarak **12 Temmuz 2026** tarihinde gözden geçirilmiştir.
+
+GitHub Discussions kategori adlari GitHub ayarlarindan yonetilir. Repository
+icindeki canonical baslik ve yayin kurallari icin [DISCUSSIONS.md](./DISCUSSIONS.md)
+esas alinir.

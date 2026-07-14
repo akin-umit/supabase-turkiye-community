@@ -38,6 +38,11 @@ bagli degildir. Ayrintilar: [MANAGEMENT-API.md](./MANAGEMENT-API.md).
 
 Temel Compose ve shell kontrolleri GitHub Actions içinde çalışır. Bu doğrulama containerların production verisiyle canlı smoke test edildiği anlamına gelmez.
 
+Public domain `503 Service Unavailable` donduruyorsa ilgili deployment
+dogrulanmis sayilmaz. Bu durumda once Coolify/Kong backend route, service
+health, internal port `8000` ve Compose reload durumu kontrol edilir; yazmali
+Auth/Storage/Realtime smoke testlerine gecilmez.
+
 ## Opsiyonel Bileşenler
 
 | Yetenek | Durum | Etkinleştirme ve kanıt |

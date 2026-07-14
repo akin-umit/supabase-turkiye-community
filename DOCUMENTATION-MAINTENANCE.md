@@ -15,8 +15,8 @@ Kod, Compose, script veya test değişikliği ilgili belgeler güncellenmeden ta
 
 | Değişiklik | Aynı PR'da kontrol edilecek belgeler |
 |---|---|
-| Base Compose servisi, port, volume, network veya env | `README.md`, `README.en.md`, `PLATFORM-CAPABILITIES*.md`, `CONFIG.md`, `DEPLOYMENT.md` |
-| Coolify kaynak/kurulum davranışı | `COOLIFY.md`, `docs/TURKCE-KURULUM.md`, `docs/ENGLISH-SETUP.md` |
+| Base Compose servisi, port, volume, network veya env | `README.md`, `README.en.md`, `PLATFORM-CAPABILITIES*.md`, `CONFIG.md`, `DEPLOYMENT.md`, `CHANGELOG.md` |
+| Coolify kaynak/kurulum davranışı | `COOLIFY.md`, `docs/TURKCE-KURULUM.md`, `docs/ENGLISH-SETUP.md`, `docs/TROUBLESHOOTING*.md`, `CHANGELOG.md` |
 | Auth, API key, JWT veya secret modeli | `CONFIG.md`, iki kurulum rehberi, `SECURITY.md`, gerekirse migration/rollback |
 | Backup, restore, migration veya PostgreSQL upgrade | `OPERATIONS.md`, `MIGRATION.md`, `DEPLOYMENT.md`, `CHANGELOG.md` |
 | Image/tag güncellemesi | `CHANGELOG.md`, `versions.md`, capability/uyumluluk notları |
@@ -25,6 +25,25 @@ Kod, Compose, script veya test değişikliği ilgili belgeler güncellenmeden ta
 | Upstream aday değişiklik | `UPSTREAM-CONTRIBUTIONS.md`, ilgili Issue/PR bağlantısı |
 
 Etkilenmeyen belge için PR açıklamasında kısa gerekçe yazılır. “Belge gerekmiyor” işaretlemek inceleme sorumluluğunu kaldırmaz.
+
+## Degisiklik Gecmisi Baglama Kurali
+
+Davranis, kurulum, port, domain, proxy, secret, backup, migration, dashboard
+veya kabul testi mantigi degistiginde `CHANGELOG.md` ana tarihsel indeks olarak
+guncellenir. Ilgili rehberler de kendi iclerinden bu changelog kaydina geri
+baglanir.
+
+Her boyle PR su sorulara kisa cevap vermelidir:
+
+1. Eski yapi neydi?
+2. Eski yapida hangi hata veya belirsizlik goruldu?
+3. Yeni yapi neyi degistiriyor?
+4. Kullanicinin yapmasi gereken net aksiyon nedir?
+5. Hangi belgeler bu degisiklige baglandi?
+
+Bu cevaplar kullaniciyi terminal loglarina bogmadan okunabilir olmalidir. Detay
+gerekiyorsa changelog ana kayit, rehberler ise pratik uygulama sayfasi olarak
+kalir.
 
 ## Testten Merge'e Akış
 

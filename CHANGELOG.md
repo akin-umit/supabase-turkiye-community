@@ -18,6 +18,15 @@
   evidence-only, partial and not-started areas without reading private rollout
   logs.
 
+Related operator documents:
+
+- [Coolify setup notes](./COOLIFY.md#degisiklik-nedeni-arsivi)
+- [Turkish troubleshooting guide](./docs/TROUBLESHOOTING.md#neden-bu-ayarlar-degisti)
+- [English troubleshooting guide](./docs/TROUBLESHOOTING.en.md#why-did-these-settings-change)
+- [Dashboard roadmap](./DASHBOARD-ROADMAP.md#2026-07-14-durum-notu)
+- [Dashboard roadmap English](./DASHBOARD-ROADMAP.en.md#2026-07-14-status-note)
+- [Documentation maintenance contract](./DOCUMENTATION-MAINTENANCE.md#degisiklik-gecmisi-baglama-kurali)
+
 ## Self-hosted Studio operations and secrets - 2026-07-12
 
 - Added Operations and Usage cards backed by self-hosted services.

@@ -31,6 +31,8 @@ Kisa cevap: Eski yapi bazi Coolify kurulumlarinda calisiyor gibi gorunse de,
 host portu ve proxy backend portu karisinca kullanici ya Coolify login ekranina
 gidiyor ya da public HTTPS domaini `503` donduruyordu.
 
+Bu degisikligin tarihsel ozeti ve bagli belgeleri [CHANGELOG.md](../CHANGELOG.md#coolify-gateway-and-acceptance-documentation---2026-07-14) icinde tutulur.
+
 - Kong host port yayini base Compose'tan ayrildi.
 - Coolify domaini yalniz `kong` servisine baglanacak sekilde netlestirildi.
 - Backend/internal portun `8000` oldugu acik yazildi.

@@ -30,6 +30,8 @@ Short answer: the old layout could appear to work in some Coolify deployments,
 but once host ports and proxy backend ports were confused, users either landed
 on the Coolify login page or the public HTTPS domain returned `503`.
 
+The historical summary and linked documents for this change live in [CHANGELOG.md](../CHANGELOG.md#coolify-gateway-and-acceptance-documentation---2026-07-14).
+
 - Kong host-port publishing was separated from the base Compose file.
 - The Coolify domain is documented as belonging only to the `kong` service.
 - The backend/internal port is explicitly `8000`.

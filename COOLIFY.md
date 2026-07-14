@@ -98,6 +98,7 @@ Bu repo ile:
 ## Degisiklik Nedeni Arsivi
 
 Bu bolum kullaniciyi loglara bogmadan, neden eski onerinin degistigini kaydeder.
+Tum tarihsel ozet ve ilgili belge baglantilari icin [CHANGELOG.md](./CHANGELOG.md#coolify-gateway-and-acceptance-documentation---2026-07-14) kaydina bak.
 
 ### Kong host port yayini ayrildi
 

@@ -39,6 +39,8 @@ Canonical technical source:
 
 Project-owned community index:
 - https://github.com/akin-umit/supabase-turkiye-community/blob/main/COMMUNITY.md
+- Development log / Gelistirme Gunlugu: https://github.com/akin-umit/supabase-turkiye-community/discussions/18
+- Roadmap and contribution plan / Yol Haritasi ve Katki Plani: https://github.com/akin-umit/supabase-turkiye-community/discussions/19
 
 Supabase Community:
 - https://github.com/orgs/supabase/discussions/47844

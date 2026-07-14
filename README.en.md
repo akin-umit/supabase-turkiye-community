@@ -132,6 +132,12 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 6. Prepare a minimal branch in our [Supabase fork](https://github.com/akin-umit/supabase).
 7. Submit upstream only after following the target repository's contribution rules.
 
+## Community Discussions
+
+- [Gelistirme Gunlugu / Development Log](https://github.com/akin-umit/supabase-turkiye-community/discussions/18)
+- [Yol Haritasi ve Katki Plani / Roadmap and Contribution Plan](https://github.com/akin-umit/supabase-turkiye-community/discussions/19)
+- [Discussion plan and templates](./DISCUSSIONS.md)
+
 See [GOVERNANCE.md](./GOVERNANCE.md) and [UPSTREAM-CONTRIBUTIONS.md](./UPSTREAM-CONTRIBUTIONS.md).
 
 ## License, Attribution, and Trademark

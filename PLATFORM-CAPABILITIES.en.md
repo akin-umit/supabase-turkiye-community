@@ -47,6 +47,11 @@ GitHub Actions validates base Compose and shell syntax. That is not production r
 
 The presence of optional files does not guarantee that every overlay combination is supported. Validate each selected combination separately.
 
+If the public domain returns `503 Service Unavailable`, that deployment is not
+accepted as verified. Check the Coolify/Kong backend route, service health,
+internal port `8000`, and Compose reload state before running write smoke tests
+for Auth, Storage, or Realtime.
+
 ## Not Provided by Self-Hosting
 
 - Cloud organization and multi-project control plane

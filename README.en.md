@@ -41,6 +41,7 @@ This project turns those operational lessons into a reusable, Git-managed distri
 | I am migrating from Supabase Cloud | [Migration guide](./MIGRATION.md) |
 | My stack is already running | [Operations guide](./OPERATIONS.md) |
 | I need capability and Cloud parity details | [Platform capabilities](./PLATFORM-CAPABILITIES.en.md) |
+| I see a 503 or gateway error | [Troubleshooting](./docs/TROUBLESHOOTING.en.md) |
 | I want to contribute | [Contribution guide](./CONTRIBUTING.md) |
 
 ## Important: One Stack Is One Project

@@ -50,6 +50,8 @@ Rehber sana sırayla şunları yaptırır:
 | Bir hata aldım | [Türkçe hata kontrol listesi](./docs/TURKCE-KURULUM.md#sik-hatalar) |
 | Katkı yapmak istiyorum | [Katkı rehberi](./CONTRIBUTING.md) |
 
+503, gateway timeout veya Coolify route hatasi gorursen once [Sorun giderme](./docs/TROUBLESHOOTING.md) sayfasini oku. Bu sayfa hangi hata kodunun ne anlama geldigini ve Gate 3/Gate 4 test siralamasini ayirir.
+
 ## Önemli Gerçek: Tek Kurulum Tek Projedir
 
 Self-hosted Supabase Studio, Supabase Cloud'daki gibi aynı panelden sınırsız yeni proje oluşturmaz. Bu Docker yapısında **bir stack bir Supabase projesidir**. İkinci bağımsız proje için ikinci stack, ayrı veritabanı, ayrı domain ve ayrı secret seti gerekir.
@@ -113,6 +115,7 @@ Arama, yapay zekâ ve dokümantasyon araçları için proje kaynak haritası [ll
 - [Türkçe resimli başlangıç](./docs/TURKCE-KURULUM.md)
 - [Kurulum seçenekleri](./DEPLOYMENT.md)
 - [Coolify ayarları](./COOLIFY.md)
+- [Sorun giderme](./docs/TROUBLESHOOTING.md)
 - [Edge Functions secret yonetimi](./FUNCTION-SECRETS.md)
 - [Dashboard ve control-plane yol haritasi](./DASHBOARD-ROADMAP.md)
 - [Salt okunur operasyon Management API](./MANAGEMENT-API.md)

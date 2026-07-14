@@ -1,5 +1,23 @@
 # Changelog
 
+## Coolify gateway and acceptance documentation - 2026-07-14
+
+- Documented why Kong host-port publishing was separated from the Coolify base
+  Compose path: host port `8000` can belong to the Coolify layer, while public
+  Supabase traffic must route through the HTTPS domain to the internal
+  `kong:8000` backend.
+- Documented why Kong should not wait for Studio health before the public
+  gateway can start. A temporary Studio health issue must not block Auth, REST,
+  Storage, Realtime or Functions routes.
+- Added Turkish and English troubleshooting guides with a compact symptom map
+  for `503`, `401 Basic`, `401 Key`, Edge Runtime empty-root responses and
+  network-alias failures.
+- Clarified Gate 3/Gate 4 order: read-only route stability comes before
+  temporary Auth user, Storage bucket, Function invoke or Realtime write smoke.
+- Updated dashboard roadmap wording so operators can distinguish completed,
+  evidence-only, partial and not-started areas without reading private rollout
+  logs.
+
 ## Self-hosted Studio operations and secrets - 2026-07-12
 
 - Added Operations and Usage cards backed by self-hosted services.

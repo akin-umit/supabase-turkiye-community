@@ -67,6 +67,30 @@ kaydi ve rollback davranisi tanimlanmadan ozellik tamamlandi sayilmaz.
 - Kalan: backup/restore job calistirma, migration uygulama ve ayri coklu proje
   control plane.
 
+## Kabul Edilmeyen veya Karistirilmamasi Gerekenler
+
+- Public route `503` donduruyorsa dashboard veya API key testi basarili
+  sayilmaz. Once Coolify/Kong backend sagligi duzeltilir.
+- Gate 4 yazmali smoke testleri, Gate 3 read-only route stabil olmadan
+  calistirilmaz.
+- Cloud ekraninda gorunen bir kartin Studio kaynak kodunda bulunmasi, self-host
+  backendinin hazir oldugu anlamina gelmez.
+- Backup ve migration kartlari su an operator kaniti gosterir; panel henuz
+  backup olusturmaz, restore calistirmaz veya migration uygulamaz.
+
+## Operator Icin Kisa Durum
+
+| Alan | Durum | Not |
+|---|---|---|
+| Self-host runtime temeli | Kismi tamam | Compose, key/JWKS, Function Secrets, Logflare/Vector ve management API temeli var. |
+| Coolify kurulumu | Kismi tamam | Domain/backend port ve host-port tuzaklari belgelendi; canli deploy her ortamda ayrica smoke ister. |
+| Dashboard Cloud benzerligi | Kismi | Bazi kartlar var, Cloud compute/topology/backup/PITR/proje fabrikasi yok. |
+| Coklu proje platformu | Baslamadi | Ayri orchestrator/control-plane urunu gerekir. |
+
+Tahmini ilerleme: self-host runtime temeli yuzde 60-65, Coolify dokumantasyonu
+yuzde 70, Cloud benzeri dashboard yuzde 25-30, coklu proje control plane yuzde
+0-10 seviyesindedir. Bu oranlar release garantisi degil, kapsam okumasidir.
+
 ## 2026-07-12 Durum Notu
 
 Topluluk Studio imaji artik self-host icin temel panel bosluklarini kapatan ilk
@@ -91,3 +115,17 @@ Siradaki kucuk paketler:
 
 Bu siralama korunacak: once read-only kanit, sonra kontrollu operasyon, en son
 coklu proje control plane.
+
+## 2026-07-14 Durum Notu
+
+Coolify/Kong calismalarinda iki onemli ders netlesti:
+
+1. Kong public gateway, Studio health sonucuna baglanmamalidir. Studio gecici
+   olarak sagliksiz olsa bile gateway public route'lari tasiyabilmelidir.
+2. Coolify domain routing ile host port yayini ayni sey degildir. Kullanici
+   `https://supabase.example.com` adresini acar; Coolify proxy backend olarak
+   container icindeki `kong:8000` portuna gider.
+
+Bu not, public community icin geneldir. Her production ortaminda son karar
+container health, deploy commit, Compose config ve read-only smoke kanitiyla
+verilir.

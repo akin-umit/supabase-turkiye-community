@@ -83,3 +83,18 @@ Documentation update rules: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINT
 
 Backup and migration cards display only operator-published status evidence. The
 dashboard does not yet create backups, execute restores, or apply migrations.
+
+## Plan, Private Validation, and Public Release
+
+Every new platform capability must use an explicit state:
+
+- **Plan:** accepted target that is not implemented yet.
+- **Private validation:** tested in our private deployment or staging
+  environment, but not yet sanitized for this public repository.
+- **Public release:** merged into this repository, CI/link/secret checks passed,
+  and linked from the changelog.
+- **Upstream candidate:** generic change that may be proposed to Supabase or a
+  component upstream repository.
+
+The same distinction applies to forum announcements and AI handoff notes. Full
+rule: [COMMUNITY-PUBLICATION-FLOW.md](./COMMUNITY-PUBLICATION-FLOW.md).

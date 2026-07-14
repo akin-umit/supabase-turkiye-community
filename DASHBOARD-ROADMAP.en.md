@@ -61,6 +61,12 @@ the open-source stack.
 A card is not complete until its backend source, authorization boundary,
 loading/error state, tests, audit evidence, and rollback behavior are defined.
 
+Every dashboard item added to the public plan must be labeled as planned,
+private validation, public release, or upstream candidate. Work that passed on a
+private test server is published to the community only after a sanitized PR,
+changelog links, and the required forum/Discussion note are prepared. Rule:
+[Community Publication Flow](./COMMUNITY-PUBLICATION-FLOW.md).
+
 ## Current Delivery Status
 
 - Completed: Operations, Usage, Observability Lite, Dashboard Preferences, and
@@ -106,3 +112,15 @@ Two lessons from the Coolify/Kong work are now part of the public guidance:
 This note is generic community guidance. In production, the final answer still
 comes from container health, deployed commit, Compose config, and read-only
 smoke evidence.
+
+## Community Planning and Discussion Posts
+
+When a dashboard or control-plane package starts:
+
+1. Add the short public plan to `DASHBOARD-ROADMAP.en.md` and, when needed,
+   `PLATFORM-CAPABILITIES.en.md`.
+2. Describe private-test work only as sanitized, generalized evidence.
+3. Do not publish a forum or GitHub Discussions update without changelog and
+   roadmap links.
+4. A new AI/operator handoff starts by reading `AGENTS.md`,
+   `COMMUNITY-PUBLICATION-FLOW.md`, this roadmap, and `CHANGELOG.md`.

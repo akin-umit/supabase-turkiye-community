@@ -113,11 +113,14 @@ Generate fresh keys, use HTTPS, expose only the intended gateway, restrict datab
 - [Migration](./MIGRATION.md)
 - [Platform capabilities and evidence](./PLATFORM-CAPABILITIES.en.md)
 - [AI/operator handoff](./AI-HANDOFF.md)
+- [Private-test to community publication flow](./COMMUNITY-PUBLICATION-FLOW.md)
+- [GitHub Discussions and bilingual publication plan](./DISCUSSIONS.md)
 - [Version history](./versions.md)
 - [Documentation maintenance contract](./DOCUMENTATION-MAINTENANCE.md)
 - [Official Supabase README - Turkish explained translation](./docs/SUPABASE-RESMI-README-TR.md)
 - [Official Supabase README - English original](https://github.com/supabase/supabase/blob/master/README.md)
 - [Upstream documentation sync policy](./docs/UPSTREAM-DOC-SYNC.md)
+- [Supabase fork sync policy](./UPSTREAM-FORK-SYNC.md)
 
 ## Contribution and Upstream Flow
 

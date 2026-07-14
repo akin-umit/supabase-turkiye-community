@@ -27,6 +27,33 @@ GitHub Discussions yalniz Ingilizce kategori basliklariyla kullanilacaksa Turkce
 etiket aciklamaya yazilir. Turkce baslik kullanilacaksa Ingilizce etiket
 aciklamaya yazilir.
 
+## GitHub Settings Mapping / GitHub Ayar Eslemesi
+
+GitHub discussion categories are repository settings, not repository files.
+They must be updated from `Discussions > edit categories` by a repository admin.
+If the API later exposes category mutations, this table remains the canonical
+mapping for automation.
+
+GitHub discussion kategorileri repository ayaridir, dosya degildir. Repository
+admini tarafindan `Discussions > edit categories` ekranindan guncellenmelidir.
+API ileride kategori mutasyonlari acarsa otomasyon icin canonical esleme bu
+tablodur.
+
+| Current GitHub category | Target display name | Description |
+|---|---|---|
+| Announcements | Duyurular / Announcements | Maintainer duyurulari, surum ozetleri ve guvenli public durum guncellemeleri. |
+| General | Genel / General | Genel topluluk sohbeti; teknik karar gerektiren konular issue veya roadmap basligina tasinir. |
+| Ideas | Yol Haritasi ve Fikirler / Roadmap and Ideas | Planlanan isler, oncelikler, dashboard fazlari ve yeni ozellik fikirleri. |
+| Q&A | Yardim ve Soru-Cevap / Help and Q&A | Kurulum, Coolify, Docker, 503, API key, Storage/Auth hata cozumleri. |
+| Show and tell | Kurulum Paylasimlari / Show and Tell | Kullanicilarin gizli veri icermeyen kurulum deneyimleri ve demolar. |
+| Polls | Anketler / Polls | Topluluk oylamalari ve oncelik yoklamalari. |
+
+Optional extra category if GitHub allows adding it:
+
+| New category | Display name | Description |
+|---|---|---|
+| Development Log | Gelistirme Gunlugu / Development Log | Yapilan islerin kisa, surekli guncellenen, PR/changelog baglantili ozeti. |
+
 ## Live Discussion Threads / Canli Tartisma Basliklari
 
 These are the first canonical public threads. Use them instead of scattering

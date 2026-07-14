@@ -1,5 +1,28 @@
 # Changelog
 
+## Community planning and publication rules - 2026-07-14
+
+- Added a permanent private-test to public-community publication flow.
+- Defined the required separation between planned work, private validation,
+  public community release, and upstream candidates.
+- Added a forum/GitHub Discussion publication rule so public posts link back to
+  canonical repository documents instead of repeating stale or private context.
+- Added bilingual GitHub Discussions category guidance and reusable public
+  update templates.
+- Added the upstream fork sync policy for `akin-umit/supabase`, including
+  fetch-only upstream remote guidance and safe self-host baseline review rules.
+- Added an AI/new-machine handoff rule: durable project memory belongs in repo
+  documents, not in chat history.
+
+Related operator documents:
+
+- [Community publication flow](./COMMUNITY-PUBLICATION-FLOW.md)
+- [GitHub Discussions plan](./DISCUSSIONS.md)
+- [Upstream fork sync policy](./UPSTREAM-FORK-SYNC.md)
+- [Documentation maintenance contract](./DOCUMENTATION-MAINTENANCE.md#private-testten-public-yayina-akis)
+- [Dashboard roadmap](./DASHBOARD-ROADMAP.md#community-planlama-ve-forum-yayini)
+- [Platform capabilities](./PLATFORM-CAPABILITIES.md#plan-private-validation-ve-public-release-ayrimi)
+
 ## Coolify gateway and acceptance documentation - 2026-07-14
 
 - Documented why Kong host-port publishing was separated from the Coolify base

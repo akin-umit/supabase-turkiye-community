@@ -115,3 +115,19 @@ gösterir. Panel henüz backup oluşturmaz, restore çalıştırmaz veya migrati
 uygulamaz.
 
 Belge güncelleme kuralları: [DOCUMENTATION-MAINTENANCE.md](./DOCUMENTATION-MAINTENANCE.md).
+
+## Plan, Private Validation ve Public Release Ayrimi
+
+Platform yetenegi tablosuna yeni bir madde eklenirken durum mutlaka acik
+yazilir:
+
+- **Plan:** henuz uygulanmamis hedef.
+- **Private validation:** kendi test/deployment ortamimizda denenmis, ancak
+  public community icin sanitize edilmemis is.
+- **Public release:** bu repoda merge edilmis, CI/link/secret kontrolleri
+  gecmis ve changelog'a baglanmis is.
+- **Upstream candidate:** Supabase veya bilesen upstream reposuna aday genel
+  degisiklik.
+
+Bu ayrim, forum duyurularinda ve AI handoff notlarinda da korunur. Ayrintili
+kural: [COMMUNITY-PUBLICATION-FLOW.md](./COMMUNITY-PUBLICATION-FLOW.md).

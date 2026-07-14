@@ -59,6 +59,12 @@ Platform API'lerini cagirir.
 Her kart icin backend kaynagi, yetki siniri, loading/error durumu, test, audit
 kaydi ve rollback davranisi tanimlanmadan ozellik tamamlandi sayilmaz.
 
+Public plana eklenen her dashboard isi once durum etiketi alir: plan, private
+validation, public release veya upstream candidate. Private test sunucusunda
+gecen bir is, public community'de ancak sanitize PR, changelog baglantisi ve
+gerekli forum/discussion notu hazirlandiktan sonra yayinlanir. Kural:
+[Community Publication Flow](./COMMUNITY-PUBLICATION-FLOW.md).
+
 ## Guncel Teslim Durumu
 
 - Tamamlandi: Operations, Usage, Observability Lite, Dashboard Preferences ve
@@ -129,3 +135,17 @@ Coolify/Kong calismalarinda iki onemli ders netlesti:
 Bu not, public community icin geneldir. Her production ortaminda son karar
 container health, deploy commit, Compose config ve read-only smoke kanitiyla
 verilir.
+
+## Community Planlama ve Forum Yayini
+
+Dashboard veya control-plane icin yeni bir paket acildiginda:
+
+1. Kisa public plan `DASHBOARD-ROADMAP.md` ve gerekirse
+   `PLATFORM-CAPABILITIES.md` icinde yazilir.
+2. Private testte denenen kisimlar public belgede yalniz sanitize ve genellenmis
+   sonuc olarak yer alir.
+3. Forum veya GitHub Discussions duyurusu, ilgili changelog ve roadmap linkleri
+   olmadan yayinlanmaz.
+4. Yeni AI/operator devraldiginda once `AGENTS.md`,
+   `COMMUNITY-PUBLICATION-FLOW.md`, bu roadmap ve `CHANGELOG.md` dosyalarini
+   okur.

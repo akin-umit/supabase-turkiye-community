@@ -16,12 +16,17 @@ This file applies to every human contributor, AI coding agent, and AI-assisted d
 3. Identify whether the change is documentation-only, deployment-only, security-sensitive, or an upstream candidate.
 4. Search existing Issues, Discussions, and pull requests before duplicating work.
 5. Preserve unrelated changes and keep the patch narrowly scoped.
+6. If the task depends on earlier private validation, public plans, or forum
+   updates, read `COMMUNITY-PUBLICATION-FLOW.md` before editing.
 
 ## AI and AI-Assisted Contributions
 
 - AI-generated code and documentation are allowed, but the human contributor remains responsible for every submitted line.
 - Pull requests must disclose meaningful AI assistance and name the verified areas, not private prompts or credentials.
 - Do not claim a command, deployment, migration, restore, or test was executed when it was only suggested or simulated.
+- Do not use chat history as the durable project memory. Important decisions,
+  phase status, forum-publication plans, and private-to-public promotion rules
+  must be written into repository documents.
 - Review generated commands for destructive behavior, platform assumptions, outdated versions, and secret exposure.
 - Verify changeable technical claims against current official Supabase or component documentation.
 - Never paste private chat history, credentials, customer data, production logs, internal URLs, or proprietary code into this repository.
@@ -72,6 +77,9 @@ Also verify documentation links, Turkish/English behavioral parity, secret safet
 ## Upstream Contributions
 
 - Community merge does not automatically authorize a Supabase upstream submission.
+- `akin-umit/supabase` is the clean upstream-candidate fork, not the deployment
+  repository. Read `UPSTREAM-FORK-SYNC.md` before syncing or preparing upstream
+  work.
 - Reproduce the issue against the current target repository and search existing Issues/PRs.
 - Move only the minimal generic fix and tests to a clean branch in the appropriate fork.
 - Remove community branding, platform-specific behavior, and private deployment evidence.

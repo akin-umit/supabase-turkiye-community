@@ -2,6 +2,11 @@
 
 Topluluk reposundaki her değişiklik Supabase'e otomatik gönderilmez. Every community change is not automatically submitted to Supabase.
 
+Fork güncelleme ve upstream sync kuralı için ayrıca
+[UPSTREAM-FORK-SYNC.md](./UPSTREAM-FORK-SYNC.md) okunmalıdır. `akin-umit/supabase`
+deployment reposu değildir; yalnız temiz upstream adayları ve Supabase kaynak
+denemeleri için kullanılır.
+
 ## Doğru Kanalı Seç / Choose the Correct Channel
 
 | Amaç / Purpose | Kanal / Channel |
@@ -36,6 +41,21 @@ Tanıtım mesajı için uygun mevcut konu: [Self-hosting: What's working (and wh
 9. Sonuç `upstream-opened`, `upstream-merged` veya `upstream-declined` olarak kaydedilir.
 
 Supabase maintainerları nihai kabul yetkisine sahiptir. Topluluk reposunda bir değişikliğin merge edilmesi upstream kabul garantisi değildir.
+
+## Fork Güncelleme Notu / Fork Sync Note
+
+`akin-umit/supabase` fork'u resmi `supabase/supabase` deposundan düzenli olarak
+fetch edilir; ancak upstream `master` körlemesine merge edilmez. Her sync önce
+hangi dosyaları etkilediğine göre sınıflandırılır:
+
+- self-hosted Docker ve image tag değişiklikleri,
+- Studio self-host davranışı,
+- Cloud control-plane-only değişiklikleri,
+- dokümantasyon veya test değişiklikleri.
+
+Yalnız self-host için gerekli ve genellenebilir parçalar private doğrulama veya
+public community PR akışına taşınır. Ayrıntılı komutlar:
+[UPSTREAM-FORK-SYNC.md](./UPSTREAM-FORK-SYNC.md).
 
 ## Supabase'e İlk Tanıtım Mesajı / Initial Introduction Draft
 

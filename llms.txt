@@ -18,6 +18,9 @@ Official status: Independent community project; not operated, supported, sponsor
 - [Platform capabilities](https://github.com/akin-umit/supabase-turkiye-community/blob/main/PLATFORM-CAPABILITIES.md): Cloud/self-hosted farkları ve doğrulanmış yetenekler
 - [Sık sorulan sorular](https://github.com/akin-umit/supabase-turkiye-community/blob/main/docs/FAQ.md): Kısa ve kaynak bağlantılı cevaplar
 - [AI/operator handoff](https://github.com/akin-umit/supabase-turkiye-community/blob/main/AI-HANDOFF.md): Geliştirici ve AI ajanları için güvenli çalışma sözleşmesi
+- [Community publication flow](https://github.com/akin-umit/supabase-turkiye-community/blob/main/COMMUNITY-PUBLICATION-FLOW.md): Private testten public community yayınına geçiş kuralı
+- [GitHub Discussions plan](https://github.com/akin-umit/supabase-turkiye-community/blob/main/DISCUSSIONS.md): Türkçe/İngilizce duyuru, geliştirme günlüğü ve forum bağlantı şablonları
+- [Upstream fork sync](https://github.com/akin-umit/supabase-turkiye-community/blob/main/UPSTREAM-FORK-SYNC.md): `akin-umit/supabase` forkunu resmi upstream ile güvenli güncelleme kuralı
 
 ## Important facts
 

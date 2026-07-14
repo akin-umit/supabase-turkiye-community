@@ -23,6 +23,7 @@ Kod, Compose, script veya test değişikliği ilgili belgeler güncellenmeden ta
 | Yeni veya kaldırılan özellik | Türkçe/İngilizce README, iki capability belgesi, config ve operasyon belgeleri |
 | CI, contribution veya AI-agent kuralı | `AGENTS.md`, `CONTRIBUTING.md`, PR şablonu |
 | Upstream aday değişiklik | `UPSTREAM-CONTRIBUTIONS.md`, ilgili Issue/PR bağlantısı |
+| Private testten public community yayınına geçiş | `COMMUNITY-PUBLICATION-FLOW.md`, `DISCUSSIONS.md`, `CHANGELOG.md`, ilgili roadmap/capability belgeleri |
 
 Etkilenmeyen belge için PR açıklamasında kısa gerekçe yazılır. “Belge gerekmiyor” işaretlemek inceleme sorumluluğunu kaldırmaz.
 
@@ -55,6 +56,23 @@ kalir.
 6. Image veya operasyon sözleşmesi değiştiyse `CHANGELOG.md` ve `versions.md` güncellenir.
 7. CI, link ve secret kontrolleri geçmeden merge edilmez.
 8. Canlı deploy ayrı onaya tabidir. Smoke sonrası yeni kanıt gerekiyorsa takip PR'ı açılır.
+
+## Private Testten Public Yayına Akış
+
+Private test sunucusunda geliştirilen bir iş public community'de doğrudan
+"tamamlandı" diye yayınlanmaz. Önce private kanıt kaydedilir, sonra yeniden
+kullanılabilir kısım sanitize edilir, ardından public PR içinde roadmap,
+capability ve changelog bağlantıları güncellenir.
+
+Kalıcı kural ve yayın sırası:
+[COMMUNITY-PUBLICATION-FLOW.md](./COMMUNITY-PUBLICATION-FLOW.md).
+
+GitHub Discussions kategori ve iki dilli duyuru sablonlari:
+[DISCUSSIONS.md](./DISCUSSIONS.md).
+
+Yeni PC'ye klonlayan bir geliştirici veya AI agent, geçmiş sohbeti değil repo
+dokümanlarını kaynak kabul eder. Bu nedenle gelecekte hatırlanması gereken her
+karar ilgili MD dosyasına yazılır.
 
 ## Release ve Deployment Sonrası
 

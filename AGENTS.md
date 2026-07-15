@@ -9,6 +9,16 @@ This file applies to every human contributor, AI coding agent, and AI-assisted d
 - Preserve attribution to `supabase/supabase`, Apache-2.0 notices, third-party licenses, and trademark boundaries.
 - Public examples must use neutral values such as `supabase.example.com`, `app.example.com`, `YOUR_SECRET`, and `YOUR_SERVER_IP`.
 
+## Turkish-First Documentation Rule
+
+- The primary audience of this repository is Turkish-speaking self-host users.
+- New documentation must be written in Turkish first. English may be added as a secondary translation, summary, or `*.en.md` mirror.
+- Do not make the English version richer than the Turkish version. If a concept, warning, setup step, limitation, or troubleshooting note exists in English, the Turkish document must contain the same practical information.
+- Main repository entry points must prefer Turkish labels and Turkish reading order: `README.md`, `docs/TURKCE-KURULUM.md`, `docs/TROUBLESHOOTING.md`, `PLATFORM-CAPABILITIES.md`, `DASHBOARD-ROADMAP.md`, and `CHANGELOG.md`.
+- English files are kept for international contributors and upstream context, but they do not replace the Turkish guide.
+- When only one language can be updated in a small emergency fix, update Turkish first and open a follow-up item for the English mirror.
+- AI agents must not leave Turkish users with only an English explanation for installation, security, backup, migration, dashboard limitations, or error recovery.
+
 ## Mandatory Start Check
 
 1. Read `AGENTS.md`, `README.md` or `README.en.md`, `CONTRIBUTING.md`, `SECURITY.md`, and the task-specific document.

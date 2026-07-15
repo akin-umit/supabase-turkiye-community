@@ -14,6 +14,13 @@
 > [!IMPORTANT]
 > Bu proje Supabase tarafından işletilmez, desteklenmez, sponsor edilmez veya resmî olarak onaylanmaz. Supabase açık kaynak bileşenlerini kullanan bağımsız bir Türkiye topluluğu çalışmasıdır. Kaynak proje: [supabase/supabase](https://github.com/supabase/supabase).
 
+## Dil Onceligi
+
+Bu repository Turkce-first ilerler. Kurulum, hata cozumu, guvenlik, backup,
+migration, dashboard sinirlari ve operator notlari once Turkce ana belgelere
+yazilir. Ingilizce belgeler uluslararasi katilim ve upstream iletisim icin
+destekleyici aynalardir; Turkce kullaniciyi eksik bilgiyle birakmamalidir.
+
 ![Kurulum yol haritası](./docs/images/kurulum-yol-haritasi.svg)
 
 ## Burada Ne Yapabilirsin?

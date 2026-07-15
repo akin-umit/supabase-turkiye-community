@@ -2,6 +2,25 @@
 
 Kod, Compose, script veya test değişikliği ilgili belgeler güncellenmeden tamamlanmış sayılmaz. Bu kural insan, AI destekli ve tam AI-agent katkıları için aynıdır.
 
+## Turkce Ana Kaynak Kurali
+
+Bu repository'nin ana dili Turkcedir. `README.md`, `docs/TURKCE-KURULUM.md`,
+`docs/TROUBLESHOOTING.md`, `PLATFORM-CAPABILITIES.md`,
+`DASHBOARD-ROADMAP.md`, `CHANGELOG.md`, `COOLIFY.md`, `DEPLOYMENT.md`,
+`OPERATIONS.md`, `CONFIG.md` ve `SECURITY.md` kullanicinin birincil kaynaklari
+sayilir.
+
+- Yeni kurulum, hata cozumu, guvenlik, yedekleme, migration, dashboard veya
+  runtime davranisi once Turkce belgeye yazilir.
+- `*.en.md` dosyalari destekleyici ceviridir. Ingilizce belge Turkce belgeden
+  daha fazla operasyonel detay tasiyorsa PR tamamlanmis sayilmaz.
+- Bir belge iki dilli olacaksa Turkce bolum once gelir, Ingilizce bolum kisa
+  ozet veya ceviri olarak kalir.
+- Turkish-first kuralina uymayan PR'larda en azindan hangi Turkce dosyanin
+  eksik kaldigi ve takip PR/Issue baglantisi yazilir.
+- Topluluk duyurulari, forum postlari ve GitHub Discussions kayitlari once
+  Turkce hazirlanir; Ingilizce metin gerekiyorsa ikinci bolum olarak eklenir.
+
 ## Tek Kaynak Kuralı
 
 - Belgeler yalnız mevcut davranışı, kanıtlanmış sonucu veya açıkça etiketlenmiş planı anlatır.

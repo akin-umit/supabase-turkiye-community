@@ -1,6 +1,8 @@
 ## Ozet / Summary
 
-Degisiklik neyi cozer?
+Bu degisiklik neyi cozer?
+
+English summary, if useful:
 
 ## Sinif / Classification
 
@@ -14,6 +16,17 @@ Degisiklik neyi cozer?
 - Tekrar uretim adimlari:
 - Onceki davranis:
 - Yeni davranis:
+- Kullanici aksiyonu:
+
+## Turkce Dokumantasyon Kontrolu
+
+- [ ] Turkce ana belge guncellendi veya neden etkilenmedigi asagida yazildi
+- [ ] Ingilizce belge guncellendiyse Turkce belge ayni operasyonel detayi iceriyor
+- [ ] Kullaniciya sadece Ingilizce kaynak birakilmadi
+- [ ] `CHANGELOG.md` veya `versions.md` etkisi kontrol edildi
+- [ ] Eski davranis, neden degisti, yeni davranis ve hata durumunda ne yapilacagi yazildi
+
+Belge degisikligi gerekmiyorsa gerekce:
 
 ## Dogrulama / Verification
 
@@ -22,21 +35,17 @@ Degisiklik neyi cozer?
 - [ ] Secret/domain/musteri bilgisi eklenmedi
 - [ ] Migration varsa rollback yolu yazildi
 - [ ] Upstream kaynak ve lisans kontrol edildi
-- [ ] `AGENTS.md` okundu ve son diff insan tarafından incelendi
-- [ ] Etkilenen Türkçe ve İngilizce belgeler aynı PR içinde güncellendi
-- [ ] Capability durumu kanıta göre `dahil`, `opsiyonel`, `sunulmuyor`, `planlanıyor` veya `doğrulanmadı` olarak yazıldı
-- [ ] `CHANGELOG.md` / `versions.md` etkisi kontrol edildi
+- [ ] `AGENTS.md` okundu ve son diff insan tarafindan incelendi
+- [ ] Capability durumu kanita gore `dahil`, `opsiyonel`, `sunulmuyor`, `planlaniyor` veya `dogrulanmadi` olarak yazildi
 
-Belge değişikliği gerekmiyorsa gerekçe:
+## AI Assistance / Yapay Zeka Destegi
 
-## AI Assistance / Yapay Zeka Desteği
+- [ ] Anlamli bir AI destegi kullanilmadi
+- [ ] AI destegi kullanildi ve gonderilen her degisiklik insan tarafindan dogrulandi
 
-- [ ] Anlamlı bir AI desteği kullanılmadı
-- [ ] AI desteği kullanıldı ve gönderilen her değişiklik insan tarafından doğrulandı
+Arac/model (istege bagli; ozel prompt veya kimlik bilgisi yazmayin):
 
-Araç/model (isteğe bağlı; özel prompt veya kimlik bilgisi yazmayın):
-
-İnsan tarafından yapılan doğrulama:
+Insan tarafindan yapilan dogrulama:
 
 ## Upstream
 

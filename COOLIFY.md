@@ -1,6 +1,6 @@
-# Coolify Baglama Notlari
+# Supabase Turkiye Coolify Baglama Notlari
 
-Bu repo Coolify'de template olarak degil, Git repo tabanli Docker Compose resource olarak kullanilmalidir.
+Bu belge Supabase Turkiye self-host kurulumlarinda Coolify uzerinden Docker Compose resource baglamak icindir. Coolify'de template yerine Git repo tabanli Docker Compose resource kullanilir.
 
 Tam sifir kurulum ve platform bagimsiz kurulum icin [DEPLOYMENT.md](./DEPLOYMENT.md), operasyon icin [OPERATIONS.md](./OPERATIONS.md) kullanilir.
 
@@ -71,19 +71,19 @@ Bu repo ile:
 - upgrade farklari Git diff ile gorulur,
 - mevcut calisan stack bozulmadan v2 test edilir.
 
-## Bilinen Coolify Tuzaklari
+## Supabase Turkiye Coolify Bulgulari
 
-- `https://supabase.example.com` `503 Service Unavailable` donduruyorsa sorun genellikle API key degil, Coolify proxy'nin `kong` backend'ine ulasamamasidir. Once domainin yalniz `kong` servisine bagli oldugunu, backend/internal portun `8000` oldugunu, Compose dosyasinin yeniden yuklenip kaydedildigini ve `kong` health durumunu kontrol et.
-- Tarayicida `http://supabase.example.com:8000` acildiginda Coolify login'e gidiyorsa bu host portunun Coolify tarafinda oldugunu gosterir; kullanicilar bu adresi kullanmaz. Public trafik `https://supabase.example.com` uzerinden Coolify proxy ile `kong:8000` internal portuna gitmelidir.
-- Base Compose Coolify icin host `ports` yayinlamaz. Yerel CLI testlerinde host port gerekiyorsa yalniz local override dosyasi kullanilir; Coolify deploy'a dahil edilmez.
-- Runtime dizininde `volumes/db/*.sql`, `volumes/api/kong.yml` veya `volumes/pooler/pooler.exs` dosya yerine klasor olursa bind mount kaynagi kayiptir. Deployment durdurulur; repo korunumu ve compose yolu duzeltilir.
-- Kong `name resolution failed` verirse compose network aliaslari kontrol edilir: `supabase-studio`, `supabase-edge-functions`, `realtime-dev.supabase-realtime`.
-- `POSTGRES_HOST`, `POSTGRES_HOSTNAME` dahili olarak `db`; dahili port `5432` olmalidir. Dis port yalniz host erisimi icindir.
-- Coolify ekrani eski commit gosteriyorsa redeploy yeterli degildir; once compose yeniden yuklenip kaydedilir.
-- Coolify acikca `docker compose -f docker-compose.yml` calistiriyorsa `.env` icindeki `COMPOSE_FILE` overlay listesi uygulanmaz. Opsiyonel servislerin gercekten calistigini container listesi ve log smoke testiyle dogrula.
-- Vector calisiyor fakat `unhealthy` gorunuyorsa health endpointinde `localhost` yerine servis icinden `127.0.0.1` veya Compose aginda `vector` adini kullan; `localhost` IPv6 `::1` olarak cozulebilir.
-- Runtime log testlerinde Compose proje adini sabitleme. `tests/test-container-logs.sh` varsayilan olarak calisma dizinini kullanir; gerekirse `COMPOSE_PROJECT_NAME` ile acikca ver.
-- Edge Functions secret modeli ve Coolify `env_file` fallback'i icin [FUNCTION-SECRETS.md](./FUNCTION-SECRETS.md) belgesini kullan.
+1. `https://supabase.example.com` `503 Service Unavailable` donduruyorsa sorun genellikle API key degil, Coolify proxy'nin `kong` backend'ine ulasamamasidir. Once domainin yalniz `kong` servisine bagli oldugunu, backend/internal portun `8000` oldugunu, Compose dosyasinin yeniden yuklenip kaydedildigini ve `kong` health durumunu kontrol et.
+2. Tarayicida `http://supabase.example.com:8000` acildiginda Coolify login'e gidiyorsa bu host portunun Coolify tarafinda oldugunu gosterir; kullanicilar bu adresi kullanmaz. Public trafik `https://supabase.example.com` uzerinden Coolify proxy ile `kong:8000` internal portuna gitmelidir.
+3. Base Compose Coolify icin host `ports` yayinlamaz. Yerel CLI testlerinde host port gerekiyorsa yalniz local override dosyasi kullanilir; Coolify deploy'a dahil edilmez.
+4. Runtime dizininde `volumes/db/*.sql`, `volumes/api/kong.yml` veya `volumes/pooler/pooler.exs` dosya yerine klasor olursa bind mount kaynagi kayiptir. Deployment durdurulur; repo korunumu ve compose yolu duzeltilir.
+5. Kong `name resolution failed` verirse compose network aliaslari kontrol edilir: `supabase-studio`, `supabase-edge-functions`, `realtime-dev.supabase-realtime`.
+6. `POSTGRES_HOST`, `POSTGRES_HOSTNAME` dahili olarak `db`; dahili port `5432` olmalidir. Dis port yalniz host erisimi icindir.
+7. Coolify ekrani eski commit gosteriyorsa redeploy yeterli degildir; once compose yeniden yuklenip kaydedilir.
+8. Coolify acikca `docker compose -f docker-compose.yml` calistiriyorsa `.env` icindeki `COMPOSE_FILE` overlay listesi uygulanmaz. Opsiyonel servislerin gercekten calistigini container listesi ve log smoke testiyle dogrula.
+9. Vector calisiyor fakat `unhealthy` gorunuyorsa health endpointinde `localhost` yerine servis icinden `127.0.0.1` veya Compose aginda `vector` adini kullan; `localhost` IPv6 `::1` olarak cozulebilir.
+10. Runtime log testlerinde Compose proje adini sabitleme. `tests/test-container-logs.sh` varsayilan olarak calisma dizinini kullanir; gerekirse `COMPOSE_PROJECT_NAME` ile acikca ver.
+11. Edge Functions secret modeli ve Coolify `env_file` fallback'i icin [FUNCTION-SECRETS.md](./FUNCTION-SECRETS.md) belgesini kullan.
 
 ## Hata Haritasi
 

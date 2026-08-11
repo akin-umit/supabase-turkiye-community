@@ -59,6 +59,8 @@ Rehber sana sırayla şunları yaptırır:
 
 503, gateway timeout veya Coolify route hatasi gorursen once [Sorun giderme](./docs/TROUBLESHOOTING.md) sayfasini oku. Bu sayfa hangi hata kodunun ne anlama geldigini ve Gate 3/Gate 4 test siralamasini ayirir.
 
+Canli Studio denetiminde cikan guncel 15 Pro parity bulgusu ve uygulanacak asamalar icin [Supabase Turkiye Studio Pro Parity Bulgulari](./docs/STUDIO-PRO-PARITY-BULGULARI.md) dosyasini takip et.
+
 ## Önemli Gerçek: Tek Kurulum Tek Projedir
 
 Self-hosted Supabase Studio, Supabase Cloud'daki gibi aynı panelden sınırsız yeni proje oluşturmaz. Bu Docker yapısında **bir stack bir Supabase projesidir**. İkinci bağımsız proje için ikinci stack, ayrı veritabanı, ayrı domain ve ayrı secret seti gerekir.
@@ -127,6 +129,7 @@ Arama, yapay zekâ ve dokümantasyon araçları için proje kaynak haritası [ll
 - [Sorun giderme](./docs/TROUBLESHOOTING.md)
 - [Edge Functions secret yonetimi](./FUNCTION-SECRETS.md)
 - [Dashboard ve control-plane yol haritasi](./DASHBOARD-ROADMAP.md)
+- [Studio Pro parity bulgulari](./docs/STUDIO-PRO-PARITY-BULGULARI.md)
 - [Salt okunur operasyon Management API](./MANAGEMENT-API.md)
 - [Izole backup restore tatbikati](./RESTORE-DRILL.md)
 - [Ortam değişkenleri](./CONFIG.md)

@@ -1,5 +1,14 @@
 # Changelog
 
+## Studio Pro parity findings - 2026-08-11
+
+- Added the public Supabase Turkiye Studio Pro parity findings list with 15 tracked items from the live self-host Studio audit.
+- Split the work into implementation stages: critical API errors, real data wiring, config persistence, Pro/Platform UX parity, self-host control-plane architecture, and final live acceptance.
+
+Related documents:
+
+- [Studio Pro parity findings](./docs/STUDIO-PRO-PARITY-BULGULARI.md)
+
 ## Dashboard parity audit documentation - 2026-07-14
 
 - Added public-safe notes from the dashboard interaction audit.
